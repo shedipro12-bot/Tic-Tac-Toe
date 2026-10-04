@@ -1,0 +1,56 @@
+.shell {
+  width: min(100%, 424px);
+  margin: clamp(0px, 4vh, 32px) auto;
+  background: var(--cream);
+  border: 1px solid #d6c89c;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
+  overflow: hidden;
+}
+.header { padding: 24px 24px 20px; border-bottom: 1px solid #d6c89c; }
+.header h1 { font-size: 28px; font-weight: 800; letter-spacing: -0.7px; }
+.setup { padding: 48px 24px 24px; min-height: 470px; display: flex; flex-direction: column; gap: 32px; }
+.setup h2 { font-size: 22px; font-weight: 700; }
+.difficulty { padding: 0; border: 0; margin: 0; min-width: 0; }
+.difficulty legend { width: 100%; text-align: center; padding: 0 0 12px; font-size: 16px; }
+.segments { display: flex; border: 1.5px solid var(--chalkboard); border-radius: 8px; overflow: hidden; }
+.segment { flex: 1; min-width: 0; position: relative; cursor: pointer; }
+.segment + .segment { border-left: 1px solid var(--chalkboard); }
+.segment input { position: absolute; inset: 0; margin: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; }
+.segment span { display: flex; justify-content: center; align-items: center; min-height: 48px; font-size: 16px; padding: 4px; }
+.segment input:checked + span { background: var(--chalk-x); font-weight: 800; box-shadow: inset 0 0 0 2px var(--chalkboard); border-radius: 6px; }
+.segment input:focus-visible + span { outline: 3px solid var(--chalkboard); outline-offset: -5px; }
+.primary { width: 100%; min-height: 48px; padding: 12px 16px; background: var(--chalkboard); color: var(--cream); border: 1px solid var(--cream); outline: 1px solid var(--chalkboard); border-radius: 8px; font-size: 16px; font-weight: 700; }
+.primary:hover { background: #224f43; }
+.primary:active { background: #11342c; }
+.setup .primary { margin-top: auto; }
+.game { padding: 16px 24px 32px; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+.difficultyCaption { font-size: 14px; font-weight: 400; }
+.status { font-size: 20px; font-weight: 700; text-align: center; min-height: 24px; }
+.woodFrame { width: min(100%, 350px); padding: 14px; border: 1px solid #845016; border-radius: 12px; background-color: #b77927; background-image: url('/textures/wood.svg'); box-shadow: 0 4px 12px rgb(0 0 0 / 15%), inset 0 0 0 3px rgb(245 236 205 / 25%), inset 0 0 0 6px rgb(85 45 10 / 20%); }
+.board { position: relative; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); aspect-ratio: 1; background: var(--chalkboard) url('/textures/chalk.svg'); border-radius: 3px; overflow: hidden; box-shadow: inset 0 0 10px rgb(0 0 0 / 30%); }
+.cell { background: transparent; border: 0; padding: 8px; min-width: 0; display: flex; align-items: center; justify-content: center; aspect-ratio: 1; color: var(--cream); }
+.cell:not(:nth-child(3n)) { border-right: 2px solid var(--cream); }
+.cell:nth-child(-n+6) { border-bottom: 2px solid var(--cream); }
+.cell:not(:disabled):hover { background: rgb(245 236 205 / 9%); }
+.cell:focus-visible { outline-offset: -6px; background: rgb(245 236 205 / 12%); }
+.markX, .markO { width: 100%; height: 100%; fill: none; stroke-width: 13; stroke-linecap: round; }
+.markX { stroke: var(--chalk-x); }
+.markO { stroke: var(--chalk-o); }
+.chalkDetail { stroke: var(--cream); opacity: 0.22; stroke-width: 2; stroke-dasharray: 3 5; }
+.winningLine { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; stroke: var(--cream); stroke-width: 5; stroke-linecap: round; }
+.players { display: flex; gap: 24px; font-size: 16px; flex-wrap: wrap; justify-content: center; }
+.players strong { font-weight: 800; }
+.recovery { padding: 32px 24px; display: grid; gap: 24px; }
+@media (max-width: 360px) {
+  .header { padding: 20px 16px; }
+  .header h1 { font-size: 26px; }
+  .setup { padding: 32px 16px 20px; }
+  .game { padding: 16px 16px 24px; }
+  .woodFrame { padding: 10px; }
+  .cell { padding: 4px; }
+}
+@media (max-height: 500px) and (orientation: landscape) {
+  .shell { margin: 0 auto; }
+  .setup { min-height: 280px; padding-top: 24px; gap: 24px; }
+}

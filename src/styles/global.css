@@ -1,0 +1,30 @@
+:root {
+  font-family: 'Nunito Sans', sans-serif;
+  color: #173e35;
+  background-color: #4f7d2a;
+  font-synthesis: none;
+  font-weight: 600;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+  --chalkboard: #173e35;
+  --cream: #f5eccd;
+  --chalk-x: #e8d76a;
+  --chalk-o: #b5a4d8;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-width: 240px;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background-image: url('/textures/grass.svg');
+  background-size: 360px 360px;
+  padding: max(24px, env(safe-area-inset-top)) max(16px, env(safe-area-inset-right)) max(24px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
+}
+button, input { font: inherit; }
+button { cursor: pointer; touch-action: manipulation; }
+button:disabled { cursor: default; }
+button:focus-visible { outline: 3px solid var(--chalk-x); outline-offset: 4px; }
+h1, h2, p { margin: 0; }
+h1, h2 { line-height: 1.2; }
+@media (max-width: 480px) { body { padding-top: max(16px, env(safe-area-inset-top)); padding-bottom: max(16px, env(safe-area-inset-bottom)); } }
