@@ -1,33 +1,6 @@
-import { expect, test, type Page } from '@playwright/test';
+import { expect, test } from '@playwright/test';
 import { findHumanPath } from '../helpers/gameTree';
-import type { Difficulty, Outcome } from '../../src/features/game/domain/types';
-import { mkdir } from 'node:fs/promises';
-
-const evidence = 'artifacts/milestone-1';
-const cell = (page: Page, index: number) => page.getByRole('group', { name: 'Tic-Tac-Toe board' }).getByRole('button').nth(index);
-async function screenshot(page: Page, name: string) {
-  await mkdir(evidence, { recursive: true });
-  await page.screenshot({ path: `${evidence}/${name}.png`, fullPage: true });
-}
-async function open(page: Page, randomValue = 0.99) {
-  await page.addInitScript(value => { Math.random = () => value; }, randomValue);
-  await page.clock.install({ time: new Date('2026-10-05T00:00:00Z') });
-  await page.clock.pauseAt(new Date('2026-10-05T00:00:01Z'));
-  await page.goto('/');
-  await page.evaluate(() => document.fonts.ready);
-}
-async function start(page: Page, difficulty: Difficulty = 'hard') {
-  await page.getByRole('radio', { name: difficulty, exact: false }).check();
-  await page.getByRole('button', { name: 'Start Game' }).click();
-  await expect(page.getByRole('status')).toHaveText('Your turn');
-}
-async function playPath(page: Page, target: Exclude<Outcome, null>, randomValue: number) {
-  const moves = findHumanPath(target, randomValue);
-  for (const index of moves) {
-    await cell(page, index).click();
-    await page.clock.runFor(400);
-  }
-}
+import { cell, open, playPath, screenshot, start } from '../helpers/browserGame';
 
 test('setup, user and computer turns match the specification', async ({ page }) => {
   await open(page);
@@ -71,7 +44,7 @@ for (const [outcome, label, image] of [
     await cell(page, 0).dispatchEvent('click');
     await page.clock.runFor(2000);
     expect(await page.getByRole('group').getByRole('button').evaluateAll(elements => elements.map(element => element.getAttribute('aria-label')))).toEqual(labels);
-    await expect(page.getByRole('button', { name: 'Play Again' })).toHaveCount(0);
+    await expect(page.getByRole('button', { name: 'Play Again' })).toBeVisible();
     await expect(page.getByRole('button', { name: 'Restart' })).toHaveCount(0);
     if (outcome === 'draw') await expect(page.locator('svg line')).toHaveCount(0);
     else await expect(page.locator('svg line')).toHaveCount(1);
@@ -104,7 +77,7 @@ test('internal opponent failure recovers in the same game layout', async ({ page
   await expect(page.getByRole('status')).toHaveText('Your turn');
   await expect(page.getByRole('button', { name: /empty$/ })).toHaveCount(9);
   await expect(page.getByText('Difficulty: Hard')).toBeVisible();
-  await expect(page.getByRole('button', { name: 'Restart' })).toHaveCount(0);
+  await expect(page.getByRole('button', { name: 'Restart' })).toBeVisible();
   await cell(page, 3).click(); await page.clock.runFor(400);
   await expect(page.getByRole('button', { name: /: O$/ })).toHaveCount(1);
 });

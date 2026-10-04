@@ -15,6 +15,7 @@ export interface GameState {
   matchId: number;
   ply: number;
   error: string | null;
+  scores: { wins: number; losses: number; draws: number };
 }
 export type GameAction =
   | { type: 'SELECT_DIFFICULTY'; difficulty: Difficulty }
@@ -22,4 +23,6 @@ export type GameAction =
   | { type: 'HUMAN_MOVE'; index: number }
   | { type: 'COMPUTER_MOVE'; index: number; matchId: number; expectedPly: number }
   | { type: 'GAME_ERROR'; matchId: number; expectedPly: number }
-  | { type: 'RECOVER_MATCH' };
+  | { type: 'RESTART_MATCH' }
+  | { type: 'PLAY_AGAIN' }
+  | { type: 'RESET_SESSION' };

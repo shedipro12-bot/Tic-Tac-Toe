@@ -9,13 +9,17 @@ export function useGameController(chooseMove = chooseComputerMove) {
   useEffect(() => {
     const visibility = () => setVisible(document.visibilityState !== 'hidden');
     const hide = () => setVisible(false);
+    const show = (event: PageTransitionEvent) => {
+      if (event.persisted) dispatch({ type: 'RESET_SESSION' });
+      visibility();
+    };
     document.addEventListener('visibilitychange', visibility);
     window.addEventListener('pagehide', hide);
-    window.addEventListener('pageshow', visibility);
+    window.addEventListener('pageshow', show);
     return () => {
       document.removeEventListener('visibilitychange', visibility);
       window.removeEventListener('pagehide', hide);
-      window.removeEventListener('pageshow', visibility);
+      window.removeEventListener('pageshow', show);
     };
   }, []);
   useEffect(() => {

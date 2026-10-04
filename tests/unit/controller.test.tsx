@@ -4,6 +4,8 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { useGameController } from '../../src/features/game/hooks/useGameController';
 import { AppErrorBoundary } from '../../src/app/AppErrorBoundary';
 import { render, screen, fireEvent } from '@testing-library/react';
+import { chooseComputerMove } from '../../src/features/game/domain/opponent';
+import { findHumanPath } from '../helpers/gameTree';
 
 const strict = ({ children }: { children: ReactNode }) => <StrictMode>{children}</StrictMode>;
 beforeEach(() => vi.useFakeTimers());
@@ -55,13 +57,13 @@ describe('computer controller lifecycle', () => {
     act(() => result.current.dispatch({ type: 'START_MATCH' }));
     act(() => result.current.dispatch({ type: 'HUMAN_MOVE', index: 0 }));
     act(() => vi.advanceTimersByTime(400)); expect(result.current.state.phase).toBe('error');
-    act(() => result.current.dispatch({ type: 'RECOVER_MATCH' }));
+    act(() => result.current.dispatch({ type: 'RESTART_MATCH' }));
     expect(result.current.state.board.every(cell => cell === null)).toBe(true);
     act(() => result.current.dispatch({ type: 'HUMAN_MOVE', index: 3 }));
     const current = result.current.state;
     act(() => result.current.dispatch({ type: 'GAME_ERROR', matchId: current.matchId, expectedPly: current.ply }));
     expect(vi.getTimerCount()).toBe(0);
-    act(() => result.current.dispatch({ type: 'RECOVER_MATCH' }));
+    act(() => result.current.dispatch({ type: 'RESTART_MATCH' }));
     act(() => vi.advanceTimersByTime(1000));
     expect(result.current.state.ply).toBe(0); expect(choose).toHaveBeenCalledTimes(1);
   });
@@ -83,5 +85,45 @@ describe('computer controller lifecycle', () => {
     expect(result.current.state.phase).toBe('error');
     expect(result.current.state.board[0]).toBe('X');
     expect(result.current.state.ply).toBe(1);
+  });
+  it('restart during a pending turn cancels the old timer under StrictMode', () => {
+    const choose = vi.fn(() => 1);
+    const { result } = renderHook(() => useGameController(choose), { wrapper: strict });
+    act(() => result.current.dispatch({ type: 'START_MATCH' }));
+    act(() => result.current.dispatch({ type: 'HUMAN_MOVE', index: 0 }));
+    act(() => vi.advanceTimersByTime(200));
+    act(() => result.current.dispatch({ type: 'RESTART_MATCH' }));
+    expect(vi.getTimerCount()).toBe(0);
+    act(() => vi.advanceTimersByTime(1000)); expect(choose).not.toHaveBeenCalled();
+    expect(result.current.state.ply).toBe(0);
+    act(() => result.current.dispatch({ type: 'HUMAN_MOVE', index: 3 }));
+    act(() => vi.advanceTimersByTime(400));
+    expect(choose).toHaveBeenCalledTimes(1); expect(result.current.state.ply).toBe(2);
+  });
+  it('persisted pageshow discards scores, difficulty and pending work', () => {
+    const choose = vi.fn(() => 1);
+    const { result } = renderHook(() => useGameController(choose), { wrapper: strict });
+    act(() => result.current.dispatch({ type: 'SELECT_DIFFICULTY', difficulty: 'hard' }));
+    act(() => result.current.dispatch({ type: 'START_MATCH' }));
+    for (const index of findHumanPath('human-win', 0)) {
+      act(() => result.current.dispatch({ type: 'HUMAN_MOVE', index }));
+      if (result.current.state.phase === 'computer-turn') {
+        const state = result.current.state;
+        act(() => result.current.dispatch({ type: 'COMPUTER_MOVE',
+          index: chooseComputerMove(state.board, 'hard', () => 0), matchId: state.matchId, expectedPly: state.ply }));
+      }
+    }
+    expect(result.current.state.scores.wins).toBe(1);
+    act(() => result.current.dispatch({ type: 'PLAY_AGAIN' }));
+    act(() => result.current.dispatch({ type: 'HUMAN_MOVE', index: 0 }));
+    expect(vi.getTimerCount()).toBe(1);
+    const generation = result.current.state.matchId;
+    act(() => window.dispatchEvent(new PageTransitionEvent('pageshow', { persisted: true })));
+    expect(result.current.state.phase).toBe('setup');
+    expect(result.current.state.matchId).toBeGreaterThan(generation);
+    expect(result.current.state.selectedDifficulty).toBe('medium');
+    expect(result.current.state.scores).toEqual({ wins: 0, losses: 0, draws: 0 });
+    expect(vi.getTimerCount()).toBe(0);
+    act(() => vi.advanceTimersByTime(1000)); expect(choose).not.toHaveBeenCalled();
   });
 });

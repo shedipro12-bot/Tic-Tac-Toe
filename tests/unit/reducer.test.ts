@@ -32,14 +32,13 @@ describe('authoritative state transitions', () => {
     expect(ended.phase).toBe('finished'); expect(ended.outcome).toBe('human-win');
     expect(gameReducer(ended, { type: 'HUMAN_MOVE', index: 6 })).toBe(ended);
     expect(gameReducer(ended, { type: 'COMPUTER_MOVE', index: 5, matchId: ended.matchId, expectedPly: ended.ply })).toBe(ended);
-    expect(gameReducer(ended, { type: 'RECOVER_MATCH' })).toBe(ended);
+    expect(gameReducer(ended, { type: 'RESTART_MATCH' })).toBe(ended);
   });
-  it('recovers only from error and invalidates older moves and errors', () => {
+  it('recovers from error and invalidates older moves and errors', () => {
     const first = gameReducer(start(), { type: 'HUMAN_MOVE', index: 0 });
-    expect(gameReducer(first, { type: 'RECOVER_MATCH' })).toBe(first);
     const error = gameReducer(first, { type: 'GAME_ERROR', matchId: first.matchId, expectedPly: first.ply });
     expect(error.phase).toBe('error');
-    const recovered = gameReducer(error, { type: 'RECOVER_MATCH' });
+    const recovered = gameReducer(error, { type: 'RESTART_MATCH' });
     expect(recovered.phase).toBe('human-turn'); expect(recovered.ply).toBe(0);
     expect(recovered.matchId).toBe(first.matchId + 1); expect(recovered.difficulty).toBe(first.difficulty);
     const next = gameReducer(recovered, { type: 'HUMAN_MOVE', index: 3 });

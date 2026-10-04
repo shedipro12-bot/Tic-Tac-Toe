@@ -1,14 +1,23 @@
-# Tic-Tac-Toe — Milestone 1
+# Tic-Tac-Toe — Milestone 2
 
 A mobile-friendly, English-language game against a local computer opponent.
 Choose Easy, Medium or Hard, press **Start Game**, and play X against O.
 You always move first. All levels occasionally make mistakes, including Hard.
 
-This slice includes setup, one complete match, static results and error recovery.
-After a result, refresh the page to choose a difficulty and start another match.
-The Restart button appears only when recovering from a game error.
-Scores, normal restart/replay, settings, sound, animation effects, offline PWA
-support and hosting belong to later milestones.
+Press **Restart** during a match to clear the board immediately and play first
+again at the same difficulty, without changing your session scores.
+After a result, choose **Next game difficulty** and press **Play Again**.
+Wins, Losses and Draws count completed matches once and accumulate while you play.
+Restarting an unfinished match does not count a result.
+
+Scores, matches and difficulty exist only in the running document's memory.
+Refresh, a new document, or restoration from the browser's back-forward cache
+starts a fresh session. Tabs are independent; backgrounding a surviving document
+preserves it and pauses the computer timer. Game-error restart retains scores;
+the top-level rendering recovery starts a fresh session.
+
+Settings, sound, animation effects, offline PWA support and hosting belong to
+later milestones.
 
 ## Run locally
 
@@ -46,7 +55,12 @@ is already running. Rebuild after changing application code before rerunning it.
 Tests cover rules, all reachable boards, independently scored opponent decisions,
 Hard beatability, guarded reducer actions, timer/visibility lifecycle, error
 recovery, complete browser games, keyboard input and responsive layouts.
-Browser screenshots are saved in `artifacts/milestone-1/`; a test report is
+Session checks cover repeat play, exactly-once counters, difficulty capture,
+restart during computer delay, fresh sessions, independent tabs and a real
+back-forward-cache restoration. A dedicated Chrome launch allows that cache
+and verifies both the persisted event and the original document's identity.
+Browser screenshots are saved in `artifacts/milestone-2/`; previous milestone
+screenshots remain in `artifacts/milestone-1/`. A test report is
 available in `playwright-report/` after the browser suite.
 
 ## Implementation boundaries
@@ -65,6 +79,6 @@ is bundled locally from `@fontsource/nunito-sans`, under the SIL Open Font
 License included in `public/licenses/`. Textures are created for this project;
 spec images remain visual references.
 
-Follow `Codex.md` and `spec/MILESTONE-1-PLAN.md`. At the end of this milestone,
+Follow `Codex.md` and `spec/MILESTONE-2-PLAN.md`. At the end of this milestone,
 submit the runnable result and evidence for developer review and stop until
 explicit approval. Do not begin the next milestone automatically.
