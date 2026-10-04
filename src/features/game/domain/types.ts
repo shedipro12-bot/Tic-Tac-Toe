@@ -16,8 +16,11 @@ export interface GameState {
   ply: number;
   error: string | null;
   scores: { wins: number; losses: number; draws: number };
+  settings: { soundEnabled: boolean; animationsEnabled: boolean };
 }
 export type GameAction =
+  | { type: 'SET_SOUND_ENABLED'; enabled: boolean }
+  | { type: 'SET_ANIMATIONS_ENABLED'; enabled: boolean }
   | { type: 'SELECT_DIFFICULTY'; difficulty: Difficulty }
   | { type: 'START_MATCH' }
   | { type: 'HUMAN_MOVE'; index: number }

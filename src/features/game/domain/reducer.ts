@@ -5,7 +5,7 @@ import type { Difficulty, GameAction, GameState, Mark } from './types';
 export function createInitialState(): GameState {
   return { board: emptyBoard(), phase: 'setup', outcome: null, winningLine: null,
     selectedDifficulty: 'medium', difficulty: 'medium', matchId: 0, ply: 0, error: null,
-    scores: { wins: 0, losses: 0, draws: 0 } };
+    scores: { wins: 0, losses: 0, draws: 0 }, settings: { soundEnabled: true, animationsEnabled: true } };
 }
 function newMatch(state: GameState, difficulty: Difficulty): GameState {
   return { ...state, board: emptyBoard(), phase: 'human-turn', outcome: null, winningLine: null,
@@ -22,6 +22,10 @@ function move(state: GameState, index: number, mark: Mark): GameState {
 }
 export function gameReducer(state: GameState, action: GameAction): GameState {
   switch (action.type) {
+    case 'SET_SOUND_ENABLED':
+      return { ...state, settings: { ...state.settings, soundEnabled: action.enabled } };
+    case 'SET_ANIMATIONS_ENABLED':
+      return { ...state, settings: { ...state.settings, animationsEnabled: action.enabled } };
     case 'SELECT_DIFFICULTY':
       return (state.phase === 'setup' || state.phase === 'finished') && DIFFICULTIES.includes(action.difficulty)
         ? { ...state, selectedDifficulty: action.difficulty } : state;

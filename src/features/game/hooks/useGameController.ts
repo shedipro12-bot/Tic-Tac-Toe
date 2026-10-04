@@ -37,6 +37,6 @@ export function useGameController(chooseMove = chooseComputerMove) {
       }
     }, COMPUTER_DELAY_MS);
     return () => window.clearTimeout(timer);
-  }, [state, visible, chooseMove]);
-  return { state, dispatch };
+  }, [state.board, state.phase, state.difficulty, state.matchId, state.ply, visible, chooseMove]);
+  return { state, dispatch, visible };
 }

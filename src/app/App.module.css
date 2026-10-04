@@ -7,8 +7,23 @@
   box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
   overflow: hidden;
 }
-.header { padding: 24px 24px 20px; border-bottom: 1px solid #d6c89c; }
+.header { padding: 24px 24px 20px; border-bottom: 1px solid #d6c89c; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
 .header h1 { font-size: 28px; font-weight: 800; letter-spacing: -0.7px; }
+.secondary { display: inline-flex; gap: 4px; align-items: center; justify-content: center; min-height: 48px; padding: 8px 12px; border: 1.5px solid var(--chalkboard); border-radius: 8px; color: var(--chalkboard); background: var(--cream); font-size: 16px; font-weight: 600; }
+.secondary:hover { background: #eaddb4; }
+.secondary svg { width: 16px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.header .settingsTitle { font-size: 22px; font-weight: 700; letter-spacing: 0; }
+.settingsHeader { justify-content: flex-start; gap: 24px; }
+.settingsTitle:focus { outline: 2px solid var(--chalkboard); outline-offset: 6px; border-radius: 2px; }
+.settings { min-height: 360px; padding: 24px; display: grid; align-content: start; gap: 16px; }
+.settingRow { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 16px 12px; border: 1px solid #d6c89c; border-radius: 8px; background: var(--cream); }
+.toggle { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 4px; border: 0; border-radius: 8px; background: transparent; color: var(--chalkboard); font-size: 16px; }
+.toggle > span:last-child { min-width: 24px; text-align: left; }
+.toggleTrack { display: block; width: 48px; height: 28px; padding: 4px; background: #737970; border-radius: 20px; }
+.toggleThumb { display: block; width: 20px; height: 20px; border-radius: 50%; background: var(--cream); }
+.toggle[aria-checked='true'] .toggleTrack { background: var(--chalkboard); }
+.toggle[aria-checked='true'] .toggleThumb { margin-left: 20px; }
+.toggle:focus-visible, .secondary:focus-visible { outline: 3px solid var(--chalkboard); outline-offset: 3px; }
 .setup { padding: 48px 24px 24px; min-height: 470px; display: flex; flex-direction: column; gap: 32px; }
 .setup h2 { font-size: 22px; font-weight: 700; }
 .difficulty { padding: 0; border: 0; margin: 0; min-width: 0; }
@@ -20,9 +35,10 @@
 .segment span { display: flex; justify-content: center; align-items: center; min-height: 48px; font-size: 16px; padding: 4px; }
 .segment input:checked + span { background: var(--chalk-x); font-weight: 800; box-shadow: inset 0 0 0 2px var(--chalkboard); border-radius: 6px; }
 .segment input:focus-visible + span { outline: 3px solid var(--chalkboard); outline-offset: -5px; }
-.primary { width: 100%; min-height: 48px; padding: 12px 16px; background: var(--chalkboard); color: var(--cream); border: 1px solid var(--cream); outline: 1px solid var(--chalkboard); border-radius: 8px; font-size: 16px; font-weight: 700; }
+.primary { width: 100%; min-height: 48px; padding: 12px 16px; background: var(--chalkboard); color: var(--cream); border: 1px solid var(--cream); outline: 1px solid var(--chalkboard); border-radius: 8px; font-size: 16px; font-weight: 600; }
 .primary:hover { background: #224f43; }
 .primary:active { background: #11342c; }
+.primary:focus-visible { outline: 3px solid var(--chalkboard); outline-offset: 4px; }
 .setup .primary { margin-top: auto; }
 .game { padding: 16px 24px 32px; display: flex; flex-direction: column; align-items: center; gap: 16px; }
 .difficultyCaption { font-size: 14px; font-weight: 400; }
@@ -40,8 +56,21 @@
 .cell:not(:disabled):hover { background: rgb(245 236 205 / 9%); }
 .cell:focus-visible { outline-offset: -6px; background: rgb(245 236 205 / 12%); }
 .markX, .markO { width: 100%; height: 100%; fill: none; stroke-width: 13; stroke-linecap: round; }
-.markX { stroke: var(--chalk-x); }
-.markO { stroke: var(--chalk-o); }
+.markX { stroke: var(--chalk-x); --move-glow: #ff4058; }
+.markO { stroke: var(--chalk-o); --move-glow: #27b8ff; }
+.moveFeedback { animation: moveAppear 300ms ease-out; transform-origin: center; }
+.lineFeedback { animation: lineEmphasis 450ms ease-out; }
+.resultFeedback { animation: resultEmphasis 450ms ease-out; }
+@keyframes moveAppear {
+  from { transform: scale(0.88); filter: drop-shadow(0 0 4px var(--move-glow)); }
+  to { transform: scale(1); filter: none; }
+}
+@keyframes lineEmphasis {
+  from { stroke: #27b8ff; filter: drop-shadow(0 0 4px #27b8ff); }
+  to { stroke: var(--cream); filter: none; }
+}
+@keyframes resultEmphasis { from { transform: scale(1.04); } to { transform: scale(1); } }
+@media (prefers-reduced-motion: reduce) { .moveFeedback, .lineFeedback, .resultFeedback { animation: none; } }
 .chalkDetail { stroke: var(--cream); opacity: 0.22; stroke-width: 2; stroke-dasharray: 3 5; }
 .winningLine { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; stroke: var(--cream); stroke-width: 5; stroke-linecap: round; }
 .players { display: flex; gap: 24px; font-size: 16px; flex-wrap: wrap; justify-content: center; }
@@ -51,6 +80,8 @@
   .header { padding: 20px 16px; }
   .header h1 { font-size: 26px; }
   .setup { padding: 32px 16px 20px; }
+  .settings { padding: 24px 16px; }
+  .settingRow { padding: 12px 8px; }
   .game { padding: 16px 16px 24px; }
   .woodFrame { padding: 10px; }
   .cell { padding: 4px; }

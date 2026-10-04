@@ -1,0 +1,12 @@
+Tic-Tac-Toe original sound effects — 2026
+
+Files: move-v1.mp3, win-v1.mp3, loss-v1.mp3, draw-v1.mp3.
+These recordings were synthesized specifically for this project from sine waves
+by scripts/generate-sounds.py. They contain no sampled third-party recordings.
+
+The original sound recordings are dedicated to the public domain under
+CC0 1.0 Universal: https://creativecommons.org/publicdomain/zero/1.0/
+No attribution is required for these four recordings. No warranty is provided.
+
+Generation: mono 44.1 kHz, MP3 64 kbit/s. The generator requires Python and an
+FFmpeg executable with libmp3lame; these build-time tools are not app dependencies.

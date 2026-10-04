@@ -6,7 +6,7 @@ test('setup, user and computer turns match the specification', async ({ page }) 
   await open(page);
   await expect(page.getByRole('radio', { name: 'Medium', exact: true })).toBeChecked();
   expect(await page.evaluate(() => document.fonts.check('800 28px "Nunito Sans"'))).toBe(true);
-  await expect(page.getByRole('button', { name: 'Settings' })).toHaveCount(0);
+  await expect(page.getByRole('button', { name: 'Settings' })).toBeVisible();
   await screenshot(page, '01-setup');
   await start(page, 'medium');
   await expect(page.getByRole('button', { name: /empty$/ })).toHaveCount(9);
@@ -84,6 +84,8 @@ test('internal opponent failure recovers in the same game layout', async ({ page
 
 test('keyboard starts a game and places a mark with a visible focus indicator', async ({ page }) => {
   await open(page);
+  await page.keyboard.press('Tab');
+  await expect(page.getByRole('button', { name: 'Settings' })).toBeFocused();
   await page.keyboard.press('Tab');
   await expect(page.getByRole('radio', { name: 'Medium', exact: true })).toBeFocused();
   await page.keyboard.press('ArrowRight');

@@ -124,6 +124,9 @@ test('real back-forward-cache restoration resets the same surviving document', a
       await expect(page.getByRole('status')).not.toHaveText('Computer’s turn');
     }
     await expect(scores(page)).toHaveText(['1', '0', '0']);
+    await page.getByRole('button', { name: 'Settings' }).click();
+    await page.getByRole('switch', { name: 'Sound effects' }).click();
+    await page.getByRole('switch', { name: 'Animations' }).click();
     const marker = await page.evaluate(() => {
       const state = window as typeof window & { documentMarker?: string; restoredFromCache?: boolean };
       state.documentMarker = crypto.randomUUID();
@@ -137,6 +140,10 @@ test('real back-forward-cache restoration resets the same surviving document', a
       const state = window as typeof window & { documentMarker?: string; restoredFromCache?: boolean };
       return { marker: state.documentMarker, persisted: state.restoredFromCache };
     })).toEqual({ marker, persisted: true });
+    await page.getByRole('button', { name: 'Settings' }).click();
+    await expect(page.getByRole('switch', { name: 'Sound effects' })).toBeChecked();
+    await expect(page.getByRole('switch', { name: 'Animations' })).toBeChecked();
+    await page.getByRole('button', { name: 'Back' }).click();
     await start(page, 'medium');
     await expect(scores(page)).toHaveText(['0', '0', '0']);
     await screenshot(page, '13-real-history-reset');
