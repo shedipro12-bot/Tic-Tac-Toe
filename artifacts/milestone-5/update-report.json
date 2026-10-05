@@ -1,0 +1,81 @@
+{
+  "browser": "154.0.8037.95",
+  "builds": {
+    "a": "6a2b86d7-34b7-493e-b40f-8ee84f4d53ec",
+    "b": "1ed493e0-17d8-451b-a2db-148440761168"
+  },
+  "sameOriginPerCase": true,
+  "httpCacheDisabled": true,
+  "outcomes": [
+    {
+      "title": "waiting update preserves setup until one explicit reset, including a double click",
+      "status": "passed",
+      "durationMs": 4342
+    },
+    {
+      "title": "update waits through human turn and Settings, then resets a finished session",
+      "status": "passed",
+      "durationMs": 2842
+    },
+    {
+      "title": "update waits through computer turn and Settings, then resets a finished session",
+      "status": "passed",
+      "durationMs": 2849
+    },
+    {
+      "title": "another tab activates B while A completes its pending turn; simulated-hidden=false",
+      "status": "passed",
+      "durationMs": 3269
+    },
+    {
+      "title": "another tab activates B while A completes its pending turn; simulated-hidden=true",
+      "status": "passed",
+      "durationMs": 3348
+    },
+    {
+      "title": "parallel consent in two tabs reloads each exactly once",
+      "status": "passed",
+      "durationMs": 2859
+    },
+    {
+      "title": "a genuinely failed worker download keeps A usable and available offline",
+      "status": "passed",
+      "durationMs": 796
+    },
+    {
+      "title": "a fully cached B updates without a network and preserves unrelated caches",
+      "status": "passed",
+      "durationMs": 3496
+    },
+    {
+      "title": "unresponsive waiting worker times out without resetting the game and can be retried",
+      "status": "passed",
+      "durationMs": 2684
+    },
+    {
+      "title": "rollback is another waiting update and still requires consent",
+      "status": "passed",
+      "durationMs": 4139
+    },
+    {
+      "title": "an actually installed app preserves A during activation from a browser tab",
+      "status": "passed",
+      "durationMs": 5197
+    },
+    {
+      "title": "a recoverable game error offers update and resets prior totals only after consent",
+      "status": "passed",
+      "durationMs": 2959
+    },
+    {
+      "title": "failed bootstrap waits for explicit consent to a fully cached different build, even offline",
+      "status": "passed",
+      "durationMs": 2166
+    }
+  ],
+  "limitations": [
+    "Local HTTP secure context; hosted HTTPS alias requires separate verification.",
+    "Installed app is desktop Chrome, not Android/iOS.",
+    "Background visibility transitions are synthetic; native minimized windows remained visible in this Windows automation session. Real-device background/foreground checks remain pending."
+  ]
+}

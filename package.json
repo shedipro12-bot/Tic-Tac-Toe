@@ -10,9 +10,10 @@
     "dev": "vite --host 127.0.0.1",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
-    "build": "npm run typecheck && vite build && node scripts/verify-pwa.mjs",
-    "preview": "vite preview --host 127.0.0.1 --port 4173 --strictPort",
-    "test:e2e": "playwright test"
+    "build": "npm run typecheck && vite build && node scripts/verify-pwa.mjs && node scripts/verify-hosting.mjs",
+    "preview": "node scripts/static-server.mjs --port 4173",
+    "test:e2e": "npm run test:updates:prepare && playwright test",
+    "test:updates:prepare": "npm run typecheck && node scripts/prepare-update-tests.mjs"
   },
   "dependencies": {
     "@fontsource/nunito-sans": "5.3.0",

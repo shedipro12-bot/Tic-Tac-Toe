@@ -1,0 +1,647 @@
+{
+  "browser": "154.0.8037.95",
+  "source": "Local static verification server; Cloudflare HTTPS remains a separate check",
+  "report": [
+    {
+      "file": "/",
+      "status": 200,
+      "headers": {
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "permissions-policy": "camera=(), microphone=(), geolocation=()",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-type": "text/html; charset=utf-8",
+        "etag": "\"e01ba8f5f85a76cc66dc3eddccc77586b9157bbcd6888c0d6f9e1eba54ba63fb\"",
+        "content-length": "1280",
+        "date": "Mon, 05 Oct 2026 11:22:26 GMT",
+        "connection": "keep-alive",
+        "keep-alive": "timeout=5"
+      },
+      "revalidation": 304
+    },
+    {
+      "file": "/index.html",
+      "status": 200,
+      "headers": {
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "permissions-policy": "camera=(), microphone=(), geolocation=()",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-type": "text/html; charset=utf-8",
+        "etag": "\"e01ba8f5f85a76cc66dc3eddccc77586b9157bbcd6888c0d6f9e1eba54ba63fb\"",
+        "content-length": "1280",
+        "date": "Mon, 05 Oct 2026 11:22:26 GMT",
+        "connection": "keep-alive",
+        "keep-alive": "timeout=5"
+      },
+      "revalidation": 304
+    },
+    {
+      "file": "/sw.js",
+      "status": 200,
+      "headers": {
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "permissions-policy": "camera=(), microphone=(), geolocation=()",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-type": "text/javascript; charset=utf-8",
+        "etag": "\"54040d354ac3ceea905cfacc88ee5a692f8d06d590b81e367983bdf622ab2c11\"",
+        "content-length": "19114",
+        "date": "Mon, 05 Oct 2026 11:22:26 GMT",
+        "connection": "keep-alive",
+        "keep-alive": "timeout=5"
+      },
+      "revalidation": 304
+    },
+    {
+      "file": "/boot-meta.json",
+      "status": 200,
+      "headers": {
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "permissions-policy": "camera=(), microphone=(), geolocation=()",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-type": "application/json",
+        "etag": "\"bd489491c4d9e895a82b013cc6e664bbd8deb44da08db3e2d927e2c202d5ca94\"",
+        "content-length": "217",
+        "date": "Mon, 05 Oct 2026 11:22:26 GMT",
+        "connection": "keep-alive",
+        "keep-alive": "timeout=5"
+      },
+      "revalidation": 304
+    },
+    {
+      "file": "/precache-inventory.json",
+      "status": 200,
+      "headers": {
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "permissions-policy": "camera=(), microphone=(), geolocation=()",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-type": "application/json",
+        "etag": "\"62e7b1cb7fe17180b699152baf03f83ab37d4055398f572f8890e822400c68ab\"",
+        "content-length": "5636",
+        "date": "Mon, 05 Oct 2026 11:22:26 GMT",
+        "connection": "keep-alive",
+        "keep-alive": "timeout=5"
+      },
+      "revalidation": 304
+    },
+    {
+      "file": "/manifest.webmanifest",
+      "status": 200,
+      "headers": {
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "permissions-policy": "camera=(), microphone=(), geolocation=()",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-type": "application/manifest+json",
+        "etag": "\"7fea9b6400f798135346abe6fcc4e466f9184648ffdba3bf706bdc9c926014cb\"",
+        "content-length": "455",
+        "date": "Mon, 05 Oct 2026 11:22:26 GMT",
+        "connection": "keep-alive",
+        "keep-alive": "timeout=5"
+      },
+      "revalidation": 304
+    },
+    {
+      "file": "/404.html",
+      "status": 200,
+      "headers": {
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "permissions-policy": "camera=(), microphone=(), geolocation=()",
+        "content-type": "text/html; charset=utf-8",
+        "etag": "\"8ba5497ce272018c45e0719977608b1e17020b7255ac7057fdf7694e697ca7b3\"",
+        "content-length": "276",
+        "date": "Mon, 05 Oct 2026 11:22:26 GMT",
+        "connection": "keep-alive",
+        "keep-alive": "timeout=5"
+      },
+      "revalidation": 304
+    },
+    {
+      "file": "/textures/wood.svg",
+      "status": 200,
+      "headers": {
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "permissions-policy": "camera=(), microphone=(), geolocation=()",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-type": "image/svg+xml",
+        "etag": "\"560e5f85d29755e0055d9fd6c805f789b97f1c26bf318a8fcf9ae9060bc60ca7\"",
+        "content-length": "626",
+        "date": "Mon, 05 Oct 2026 11:22:26 GMT",
+        "connection": "keep-alive",
+        "keep-alive": "timeout=5"
+      },
+      "revalidation": 304
+    },
+    {
+      "file": "/textures/grass.svg",
+      "status": 200,
+      "headers": {
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "permissions-policy": "camera=(), microphone=(), geolocation=()",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-type": "image/svg+xml",
+        "etag": "\"e3db2b68f25bd56beeb0a111311b678f9b616f4e1c83a357ce2882954f9eb135\"",
+        "content-length": "101982",
+        "date": "Mon, 05 Oct 2026 11:22:26 GMT",
+        "connection": "keep-alive",
+        "keep-alive": "timeout=5"
+      },
+      "revalidation": 304
+    },
+    {
+      "file": "/textures/chalk.svg",
+      "status": 200,
+      "headers": {
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "permissions-policy": "camera=(), microphone=(), geolocation=()",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-type": "image/svg+xml",
+        "etag": "\"a391d7178dc1b0d65318446e837049e3fb47be2f8428e4874e3b58bdad2f8704\"",
+        "content-length": "338",
+        "date": "Mon, 05 Oct 2026 11:22:26 GMT",
+        "connection": "keep-alive",
+        "keep-alive": "timeout=5"
+      },
+      "revalidation": 304
+    },
+    {
+      "file": "/sounds/win-v1.mp3",
+      "status": 200,
+      "headers": {
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "permissions-policy": "camera=(), microphone=(), geolocation=()",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-type": "audio/mpeg",
+        "etag": "\"431fb2861fa6c59d582ff06d8c88d9c23bfd3224792c80007ae0a6b1866e7ed5\"",
+        "content-length": "4640",
+        "date": "Mon, 05 Oct 2026 11:22:26 GMT",
+        "connection": "keep-alive",
+        "keep-alive": "timeout=5"
+      },
+      "revalidation": 304
+    },
+    {
+      "file": "/sounds/move-v1.mp3",
+      "status": 200,
+      "headers": {
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "permissions-policy": "camera=(), microphone=(), geolocation=()",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-type": "audio/mpeg",
+        "etag": "\"849c438c955f5390805d2fe412b702cccbfa11d7b3ce83ac53e7d5981f941474\"",
+        "content-length": "1505",
+        "date": "Mon, 05 Oct 2026 11:22:26 GMT",
+        "connection": "keep-alive",
+        "keep-alive": "timeout=5"
+      },
+      "revalidation": 304
+    },
+    {
+      "file": "/sounds/loss-v1.mp3",
+      "status": 200,
+      "headers": {
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "permissions-policy": "camera=(), microphone=(), geolocation=()",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-type": "audio/mpeg",
+        "etag": "\"f3a9065ba23e82a4fcafc2832f8eae6fd7cf5101b0bd4de582b45fd58bb09af9\"",
+        "content-length": "4013",
+        "date": "Mon, 05 Oct 2026 11:22:26 GMT",
+        "connection": "keep-alive",
+        "keep-alive": "timeout=5"
+      },
+      "revalidation": 304
+    },
+    {
+      "file": "/sounds/draw-v1.mp3",
+      "status": 200,
+      "headers": {
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "permissions-policy": "camera=(), microphone=(), geolocation=()",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-type": "audio/mpeg",
+        "etag": "\"1646c785242b5638a3493d23b122cfd29f0e0697f0a0f31d826f6794271053a4\"",
+        "content-length": "3595",
+        "date": "Mon, 05 Oct 2026 11:22:26 GMT",
+        "connection": "keep-alive",
+        "keep-alive": "timeout=5"
+      },
+      "revalidation": 304
+    },
+    {
+      "file": "/icons/maskable-512.png",
+      "status": 200,
+      "headers": {
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "permissions-policy": "camera=(), microphone=(), geolocation=()",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-type": "image/png",
+        "etag": "\"91c4f5b321d7bfce6679326136124d92213689ac74a7d9302f93e560b75741bf\"",
+        "content-length": "19791",
+        "date": "Mon, 05 Oct 2026 11:22:26 GMT",
+        "connection": "keep-alive",
+        "keep-alive": "timeout=5"
+      },
+      "revalidation": 304
+    },
+    {
+      "file": "/icons/icon-512.png",
+      "status": 200,
+      "headers": {
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "permissions-policy": "camera=(), microphone=(), geolocation=()",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-type": "image/png",
+        "etag": "\"99da5aef4c58a7a8223a50549d559ec82ecc64d62030725f7b3c236024c4f7e3\"",
+        "content-length": "24317",
+        "date": "Mon, 05 Oct 2026 11:22:26 GMT",
+        "connection": "keep-alive",
+        "keep-alive": "timeout=5"
+      },
+      "revalidation": 304
+    },
+    {
+      "file": "/icons/icon-192.png",
+      "status": 200,
+      "headers": {
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "permissions-policy": "camera=(), microphone=(), geolocation=()",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-type": "image/png",
+        "etag": "\"2758a53681dccb678c522639fc656a38e8b3ba1896a1ebd04dfbee391ed79cff\"",
+        "content-length": "8402",
+        "date": "Mon, 05 Oct 2026 11:22:26 GMT",
+        "connection": "keep-alive",
+        "keep-alive": "timeout=5"
+      },
+      "revalidation": 304
+    },
+    {
+      "file": "/icons/apple-touch-180.png",
+      "status": 200,
+      "headers": {
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "permissions-policy": "camera=(), microphone=(), geolocation=()",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-type": "image/png",
+        "etag": "\"4a5b3fde6b434489617b36786310cc1dac583a15f6b0331fe227c7fad77a1ec6\"",
+        "content-length": "8318",
+        "date": "Mon, 05 Oct 2026 11:22:26 GMT",
+        "connection": "keep-alive",
+        "keep-alive": "timeout=5"
+      },
+      "revalidation": 304
+    },
+    {
+      "file": "/assets/workbox-window.prod.es5-Bd17z0YL.js",
+      "status": 200,
+      "headers": {
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "permissions-policy": "camera=(), microphone=(), geolocation=()",
+        "cache-control": "public, max-age=31536000, immutable",
+        "content-type": "text/javascript; charset=utf-8",
+        "etag": "\"17bcc17d60dc78f927834b880c39649b03af46fd1f5cdbb8c42c5ae2b515dce9\"",
+        "content-length": "5653",
+        "date": "Mon, 05 Oct 2026 11:22:26 GMT",
+        "connection": "keep-alive",
+        "keep-alive": "timeout=5"
+      },
+      "revalidation": 304
+    },
+    {
+      "file": "/assets/nunito-sans-latin-800-normal-MgCk9Q3Y.woff2",
+      "status": 200,
+      "headers": {
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "permissions-policy": "camera=(), microphone=(), geolocation=()",
+        "cache-control": "public, max-age=31536000, immutable",
+        "content-type": "font/woff2",
+        "etag": "\"4c839e56cbef1bbdfd509670f523730e24298aaf9a7791e0151031b023c12e4c\"",
+        "content-length": "13876",
+        "date": "Mon, 05 Oct 2026 11:22:26 GMT",
+        "connection": "keep-alive",
+        "keep-alive": "timeout=5"
+      },
+      "revalidation": 304
+    },
+    {
+      "file": "/assets/nunito-sans-latin-800-normal-DOf_K5Iw.woff",
+      "status": 200,
+      "headers": {
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "permissions-policy": "camera=(), microphone=(), geolocation=()",
+        "cache-control": "public, max-age=31536000, immutable",
+        "content-type": "font/woff",
+        "etag": "\"ec6b6c8b99b2775c4229a72caf344a3707db535ff2f51214b5d0f3af8109ae05\"",
+        "content-length": "17520",
+        "date": "Mon, 05 Oct 2026 11:22:26 GMT",
+        "connection": "keep-alive",
+        "keep-alive": "timeout=5"
+      },
+      "revalidation": 304
+    },
+    {
+      "file": "/assets/nunito-sans-latin-700-normal-CLVG92B9.woff",
+      "status": 200,
+      "headers": {
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "permissions-policy": "camera=(), microphone=(), geolocation=()",
+        "cache-control": "public, max-age=31536000, immutable",
+        "content-type": "font/woff",
+        "etag": "\"fe7ef3a1c3ca27c92cf6de0d060f4d42db3e56a2b48ac00cbb5b535909b0a276\"",
+        "content-length": "17408",
+        "date": "Mon, 05 Oct 2026 11:22:26 GMT",
+        "connection": "keep-alive",
+        "keep-alive": "timeout=5"
+      },
+      "revalidation": 304
+    },
+    {
+      "file": "/assets/nunito-sans-latin-700-normal-CICRJDmU.woff2",
+      "status": 200,
+      "headers": {
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "permissions-policy": "camera=(), microphone=(), geolocation=()",
+        "cache-control": "public, max-age=31536000, immutable",
+        "content-type": "font/woff2",
+        "etag": "\"cb84238e7b852f2d22b91a598289f13b31cbc7a2d618fd2c0628ecb69459fbeb\"",
+        "content-length": "13836",
+        "date": "Mon, 05 Oct 2026 11:22:26 GMT",
+        "connection": "keep-alive",
+        "keep-alive": "timeout=5"
+      },
+      "revalidation": 304
+    },
+    {
+      "file": "/assets/nunito-sans-latin-600-normal-DLks-Kj1.woff",
+      "status": 200,
+      "headers": {
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "permissions-policy": "camera=(), microphone=(), geolocation=()",
+        "cache-control": "public, max-age=31536000, immutable",
+        "content-type": "font/woff",
+        "etag": "\"590feff6926e4e25997cc3ee223bb606d364cc20969c0dc055e64068e7387d24\"",
+        "content-length": "17644",
+        "date": "Mon, 05 Oct 2026 11:22:26 GMT",
+        "connection": "keep-alive",
+        "keep-alive": "timeout=5"
+      },
+      "revalidation": 304
+    },
+    {
+      "file": "/assets/nunito-sans-latin-600-normal-BtVRvDNj.woff2",
+      "status": 200,
+      "headers": {
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "permissions-policy": "camera=(), microphone=(), geolocation=()",
+        "cache-control": "public, max-age=31536000, immutable",
+        "content-type": "font/woff2",
+        "etag": "\"e03e312b8b7abd8b69ecef4060ded626f80e45723becd13676ad8273cf568a6e\"",
+        "content-length": "14008",
+        "date": "Mon, 05 Oct 2026 11:22:26 GMT",
+        "connection": "keep-alive",
+        "keep-alive": "timeout=5"
+      },
+      "revalidation": 304
+    },
+    {
+      "file": "/assets/nunito-sans-latin-400-normal-DY9yCUyQ.woff",
+      "status": 200,
+      "headers": {
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "permissions-policy": "camera=(), microphone=(), geolocation=()",
+        "cache-control": "public, max-age=31536000, immutable",
+        "content-type": "font/woff",
+        "etag": "\"978bf505dba34296f77e70706e24148d4d41bdc327331bf9b0808a33fc4ff955\"",
+        "content-length": "17512",
+        "date": "Mon, 05 Oct 2026 11:22:26 GMT",
+        "connection": "keep-alive",
+        "keep-alive": "timeout=5"
+      },
+      "revalidation": 304
+    },
+    {
+      "file": "/assets/nunito-sans-latin-400-normal-AkRraKH2.woff2",
+      "status": 200,
+      "headers": {
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "permissions-policy": "camera=(), microphone=(), geolocation=()",
+        "cache-control": "public, max-age=31536000, immutable",
+        "content-type": "font/woff2",
+        "etag": "\"d9976dd1dc9c0d65046b52810e7cc69cfc229ee9939628ffe637e17efe4ef1ed\"",
+        "content-length": "13892",
+        "date": "Mon, 05 Oct 2026 11:22:26 GMT",
+        "connection": "keep-alive",
+        "keep-alive": "timeout=5"
+      },
+      "revalidation": 304
+    },
+    {
+      "file": "/assets/main-DZGGhWma.css",
+      "status": 200,
+      "headers": {
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "permissions-policy": "camera=(), microphone=(), geolocation=()",
+        "cache-control": "public, max-age=31536000, immutable",
+        "content-type": "text/css; charset=utf-8",
+        "etag": "\"31f252fdc3af3951d3350094da57d1c188aa8a748fbe6d8ccc05347907a41b31\"",
+        "content-length": "9204",
+        "date": "Mon, 05 Oct 2026 11:22:26 GMT",
+        "connection": "keep-alive",
+        "keep-alive": "timeout=5"
+      },
+      "revalidation": 304
+    },
+    {
+      "file": "/assets/main-C4SVpYGX.js",
+      "status": 200,
+      "headers": {
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "permissions-policy": "camera=(), microphone=(), geolocation=()",
+        "cache-control": "public, max-age=31536000, immutable",
+        "content-type": "text/javascript; charset=utf-8",
+        "etag": "\"c11b2c38d0788efec35ce0dec8ba9661a68e1b3a3814e2040508a8e3b6148a23\"",
+        "content-length": "238812",
+        "date": "Mon, 05 Oct 2026 11:22:26 GMT",
+        "connection": "keep-alive",
+        "keep-alive": "timeout=5"
+      },
+      "revalidation": 304
+    },
+    {
+      "file": "/assets/index-LBExEvNG.css",
+      "status": 200,
+      "headers": {
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "permissions-policy": "camera=(), microphone=(), geolocation=()",
+        "cache-control": "public, max-age=31536000, immutable",
+        "content-type": "text/css; charset=utf-8",
+        "etag": "\"d3ea094b6be46050ca9386ea888de90a2c17ff35996f29eea4b4700abad04a31\"",
+        "content-length": "1158",
+        "date": "Mon, 05 Oct 2026 11:22:27 GMT",
+        "connection": "keep-alive",
+        "keep-alive": "timeout=5"
+      },
+      "revalidation": 304
+    },
+    {
+      "file": "/assets/index-BnOlTNhx.js",
+      "status": 200,
+      "headers": {
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "permissions-policy": "camera=(), microphone=(), geolocation=()",
+        "cache-control": "public, max-age=31536000, immutable",
+        "content-type": "text/javascript; charset=utf-8",
+        "etag": "\"559c33fdb49c9e009e1e6f9935b9d8b07c6a75965478907bdb7dd2783785d2dd\"",
+        "content-length": "5010",
+        "date": "Mon, 05 Oct 2026 11:22:27 GMT",
+        "connection": "keep-alive",
+        "keep-alive": "timeout=5"
+      },
+      "revalidation": 304
+    },
+    {
+      "file": "/sw-support-1ed493e0-17d8-451b-a2db-148440761168.js",
+      "status": 200,
+      "headers": {
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "permissions-policy": "camera=(), microphone=(), geolocation=()",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-type": "text/javascript; charset=utf-8",
+        "etag": "\"4a5dc4fdaf3177190edbcbd81b9635602aa27cf7f8b3168d809fcc4d7d9ca38a\"",
+        "content-length": "7207",
+        "date": "Mon, 05 Oct 2026 11:22:27 GMT",
+        "connection": "keep-alive",
+        "keep-alive": "timeout=5"
+      },
+      "revalidation": 304
+    },
+    {
+      "file": "/assets/missing.js",
+      "status": 404,
+      "headers": {
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "permissions-policy": "camera=(), microphone=(), geolocation=()",
+        "cache-control": "public, max-age=31536000, immutable",
+        "content-type": "text/html; charset=utf-8",
+        "etag": "\"8ba5497ce272018c45e0719977608b1e17020b7255ac7057fdf7694e697ca7b3\"",
+        "content-length": "276",
+        "date": "Mon, 05 Oct 2026 11:22:27 GMT",
+        "connection": "keep-alive",
+        "keep-alive": "timeout=5"
+      }
+    },
+    {
+      "file": "/sounds/missing.mp3",
+      "status": 404,
+      "headers": {
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "permissions-policy": "camera=(), microphone=(), geolocation=()",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-type": "text/html; charset=utf-8",
+        "etag": "\"8ba5497ce272018c45e0719977608b1e17020b7255ac7057fdf7694e697ca7b3\"",
+        "content-length": "276",
+        "date": "Mon, 05 Oct 2026 11:22:27 GMT",
+        "connection": "keep-alive",
+        "keep-alive": "timeout=5"
+      }
+    },
+    {
+      "file": "/api/missing",
+      "status": 404,
+      "headers": {
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "permissions-policy": "camera=(), microphone=(), geolocation=()",
+        "content-type": "text/html; charset=utf-8",
+        "etag": "\"8ba5497ce272018c45e0719977608b1e17020b7255ac7057fdf7694e697ca7b3\"",
+        "content-length": "276",
+        "date": "Mon, 05 Oct 2026 11:22:27 GMT",
+        "connection": "keep-alive",
+        "keep-alive": "timeout=5"
+      }
+    },
+    {
+      "file": "/not-a-route",
+      "status": 404,
+      "headers": {
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "permissions-policy": "camera=(), microphone=(), geolocation=()",
+        "content-type": "text/html; charset=utf-8",
+        "etag": "\"8ba5497ce272018c45e0719977608b1e17020b7255ac7057fdf7694e697ca7b3\"",
+        "content-length": "276",
+        "date": "Mon, 05 Oct 2026 11:22:27 GMT",
+        "connection": "keep-alive",
+        "keep-alive": "timeout=5"
+      }
+    }
+  ]
+}

@@ -9,3 +9,8 @@ body { margin: 0; }
 .connection-copy h2 { font-size: 22px; margin: 0; }
 .connection-copy p { font-size: 16px; line-height: 1.5; margin: 0; }
 .connection-copy h2:focus { outline: 2px solid #173e35; outline-offset: 6px; }
+.connection-update { padding: 16px 24px; border-top: 1px solid #d6c89c; display: grid; gap: 12px; }
+.connection-update p { margin: 0; font-size: 14px; line-height: 1.5; }
+.connection-update button { min-height: 52px; padding: 12px 16px; border: 0; border-radius: 8px; background: #173e35; color: #f5eccd; font: inherit; cursor: pointer; touch-action: manipulation; }
+.connection-update button:focus-visible { outline: 3px solid #173e35; outline-offset: 4px; }
+.connection-update button:disabled { opacity: 0.7; cursor: default; }

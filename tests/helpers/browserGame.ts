@@ -5,14 +5,15 @@ import type { Difficulty, Outcome } from '../../src/features/game/domain/types';
 
 export const cell = (page: Page, index: number) => page.getByRole('group', { name: 'Tic-Tac-Toe board' }).getByRole('button').nth(index);
 export async function screenshot(page: Page, name: string) {
-  await mkdir('artifacts/milestone-4', { recursive: true });
-  await page.screenshot({ path: `artifacts/milestone-4/${name}.png`, fullPage: true });
+  await mkdir('artifacts/milestone-5', { recursive: true });
+  await page.screenshot({ path: `artifacts/milestone-5/${name}.png`, fullPage: true });
 }
 export async function open(page: Page, randomValue = 0.99) {
   await page.addInitScript(value => { Math.random = () => value; }, randomValue);
   await page.clock.install({ time: new Date('2026-10-05T00:00:00Z') });
   await page.clock.pauseAt(new Date('2026-10-05T00:00:01Z'));
   await page.goto('/');
+  await expect(page.getByRole('button', { name: 'Start Game' })).toBeVisible();
   await page.evaluate(() => document.fonts.ready);
 }
 export async function start(page: Page, difficulty: Difficulty = 'hard') {

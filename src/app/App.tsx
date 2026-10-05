@@ -5,6 +5,7 @@ import { SetupPanel } from '../features/game/components/SetupPanel';
 import { GameScreen } from '../features/game/components/GameScreen';
 import { SettingsPanel } from '../features/settings/SettingsPanel';
 import { OfflineNotice } from '../pwa/OfflineNotice';
+import { UpdateLock, UpdateNotice } from '../pwa/UpdateNotice';
 import styles from './App.module.css';
 
 export function App() {
@@ -16,6 +17,8 @@ export function App() {
   const heading = useRef<HTMLHeadingElement>(null);
   const settingsButton = useRef<HTMLButtonElement>(null);
   const wasOpen = useRef(false);
+  const safe = useRef(false);
+  safe.current = ['setup', 'finished', 'error'].includes(state.phase);
   useEffect(() => {
     if (settingsOrigin !== null && state.phase === 'setup' && state.matchId !== settingsOrigin) setSettingsOrigin(null);
   }, [settingsOrigin, state.phase, state.matchId]);
@@ -26,6 +29,7 @@ export function App() {
   }, [settingsOpen]);
   return (
     <main className={styles.shell}>
+      <UpdateLock>
       <header className={`${styles.header} ${settingsOpen ? styles.settingsHeader : ''}`}>
         {settingsOpen ? <>
           <button className={styles.secondary} onClick={() => setSettingsOrigin(null)}>
@@ -44,7 +48,9 @@ export function App() {
           ? <SetupPanel difficulty={state.selectedDifficulty} dispatch={dispatch} />
           : <GameScreen state={state} dispatch={dispatch} feedback={feedback} />}
       </div>
+      </UpdateLock>
       <OfflineNotice />
+      <UpdateNotice canApply={() => safe.current} />
     </main>
   );
 }

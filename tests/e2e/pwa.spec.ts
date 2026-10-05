@@ -120,8 +120,8 @@ test('offline acceptance: every cached resource, font, texture, MP3 decode, real
   await fresh.getByRole('button', { name: 'Media probe' }).click();
   expect(await fresh.evaluate(() => (window as typeof window & { playback: Promise<boolean[]> }).playback)).toEqual([true, true, true, true]);
   await fresh.locator('#media-probe').evaluate(element => element.remove());
-  await mkdir('artifacts/milestone-4', { recursive: true });
-  await writeFile('artifacts/milestone-4/offline-resource-report.json', JSON.stringify(report, null, 2));
+  await mkdir('artifacts/milestone-5', { recursive: true });
+  await writeFile('artifacts/milestone-5/offline-resource-report.json', JSON.stringify(report, null, 2));
   for (const url of ['/assets/missing.js', '/sounds/missing.mp3', '/api/missing']) {
     const result = await fresh.evaluate(async url => { try { const r = await fetch(url); return r.headers.get('content-type'); } catch { return null; } }, url);
     expect(result ?? '').not.toContain('text/html');
@@ -213,7 +213,10 @@ test('partial optional assets and quota failure do not block a live game or clai
     };
   });
   await context.setOffline(false); await checkCache(page);
-  await expect.poll(() => worker.evaluate(() => (self as typeof self & { failedPuts: number }).failedPuts)).toBe(12);
+  // Online and visibility events can queue a second complete repair attempt.
+  // Each attempt must reach all 12 missing resources and fail honestly.
+  await expect.poll(() => worker.evaluate(() => (self as typeof self & { failedPuts: number }).failedPuts)).toBeGreaterThanOrEqual(12);
+  expect(await worker.evaluate(() => (self as typeof self & { failedPuts: number }).failedPuts % 12)).toBe(0);
   await expect(unavailable(page)).toBeVisible();
   await expect(ready(page)).toHaveCount(0); await expect(page.getByRole('definition')).toHaveText(['1', '0', '0']);
   await worker.evaluate(() => { Cache.prototype.put = (self as typeof self & { savedPut: typeof Cache.prototype.put }).savedPut; });

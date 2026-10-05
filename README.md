@@ -1,4 +1,4 @@
-# Tic-Tac-Toe — Milestone 4
+# Tic-Tac-Toe — Milestone 5 candidate
 
 A mobile-friendly, English-language game against a local computer opponent.
 Choose Easy, Medium or Hard, press **Start Game**, and play X against O.
@@ -36,7 +36,18 @@ build. Failed or incomplete preparation shows **Offline play could not be prepar
 without blocking a usable game. An available shell with missing game code shows
 **Connection needed** and recovers to Setup after connectivity returns. A first
 uncached offline visit can only show the browser's network error.
-Deployment and the user-controlled update flow belong to Milestone 5.
+When a complete new version is available, **Update and reset session** appears
+in setup, after a result, or during error recovery. It remains hidden during a
+match, including Settings opened from that match. Updates never automatically
+reload another tab or installed window. Choosing the button reloads this
+document into the prepared version and restores Medium, zero totals and both
+feedback switches On. A failed attempt unlocks the game and allows retry.
+Returning to a visible online document checks for updates, at most once per
+30 seconds. A fully prepared update can also be accepted offline.
+
+Cloudflare Pages configuration and manual release checks are included; the
+account connection, hosted verification and physical-device/user trials remain
+pending. See `spec/MILESTONE-5-REVIEW.md` for the actual completion status.
 
 ## Run locally
 
@@ -55,7 +66,9 @@ npm run build
 npm run preview
 ```
 
-Open http://127.0.0.1:4173. This is a local preview; no public deployment is made.
+Open http://127.0.0.1:4173. The local static verification server applies the
+same `_headers` rules, content types, revalidation and 404 policy prepared for
+Pages. It is a development tool; production serves `dist` directly on Cloudflare.
 
 ## Verify
 
@@ -69,7 +82,14 @@ npm run test:e2e
 Playwright uses installed Google Chrome by default. Set `PLAYWRIGHT_CHANNEL`
 to `msedge` to use installed Microsoft Edge instead. The browser runs headlessly.
 The browser suite starts a production preview automatically, or reuses one that
-is already running. Rebuild after changing application code before rerunning it.
+is already running. `npm run test:e2e` prepares two distinct production builds
+automatically, then runs the suite. The final build B remains in `dist` for review.
+For a focused update test run:
+
+```sh
+npm run test:updates:prepare
+npx playwright test tests/e2e/updates.spec.ts tests/e2e/hosting.spec.ts
+```
 
 Tests cover rules, all reachable boards, independently scored opponent decisions,
 Hard beatability, guarded reducer actions, timer/visibility lifecycle, error
@@ -86,15 +106,17 @@ profile reopened in a new process, all levels, results, totals, restart/replay,
 settings, Range media responses and real offline playback. Worker-owned download
 failure, registration failure/retry, partial caches, quota failure, blocked cache
 access, core-load recovery and unsupported workers are tested separately.
-The final suite contains 59 unit tests and 69 browser tests, including 12 fixed
-offline acceptance cases (12/12 passed) and an actual installed-app test.
+The suite includes the 59 unit tests and 69 browser tests from Milestone 4,
+including 12 fixed desktop offline acceptance cases, plus production HTTP/CSP
+checks and actual two-build update tests. The latest counts and results are in
+`spec/MILESTONE-5-REVIEW.md`.
 The latter uses headed desktop Chrome in an offscreen, isolated test profile,
 installs and launches via Chrome's PWA protocol, verifies actual standalone
 display and an offline game, then uninstalls the test app. It requires a Windows
 desktop session; this is not an Android/iOS installation test. The remaining
 browser tests run headlessly. Resource-failure fallback tests block workers to
 keep cached responses from hiding deliberately missing resources.
-Browser screenshots and JSON evidence are saved in `artifacts/milestone-4/`;
+Browser screenshots and JSON evidence are saved in `artifacts/milestone-5/`;
 previous milestone screenshots remain in their original directories. A test report is
 available in `playwright-report/` after the browser suite.
 
@@ -108,9 +130,13 @@ available in `playwright-report/` after the browser suite.
 - `src/app/`: composition, error boundary and CSS Modules.
 - `src/styles/`: global styles and design tokens.
 - `src/boot.ts`: small external bootstrap with core-load failure recovery.
-- `src/pwa/`: single registration, cache readiness and non-blocking notice.
+- `src/pwa/`: single registration, cache readiness, explicit updates and notices.
 - `scripts/sw-support.js`: generated-worker cache inspection/repair and MP3 ranges.
 - `scripts/verify-pwa.mjs`: build-time inventory, integrity and manifest validation.
+- `scripts/verify-hosting.mjs`: exact security policy and asset-cache validation.
+- `scripts/static-server.mjs`: local static preview and switchable release test server.
+- `scripts/prepare-update-tests.mjs`: two production builds at one test origin.
+- `public/_headers`, `public/404.html`: static Cloudflare headers and missing-route policy.
 - `public/icons/`: original standard, maskable and Apple PNG icons.
 - `public/textures/`: original, local SVG grass/wood/chalk textures.
 - `public/sounds/`: four short original, versioned MP3 effects.
@@ -129,10 +155,12 @@ tools; running or building the app needs neither. The optional icon generator
 The production build generates a unique worker-support filename and resource
 integrity inventory. Workbox manages revisioned resources; gameplay and
 preferences are never sent to the worker or stored there. Waiting updates do
-not reload a live game. The complete unique precache has 28 resources;
+not reload a live game. The complete unique precache has 29 resources;
 Workbox also emits an identical duplicate manifest entry, deduplicated by URL.
 
-Follow `Codex.md` and `spec/MILESTONE-4-PLAN.md`. Results and review steps are in
-`spec/MILESTONE-4-REVIEW.md`. At the end of this milestone,
+Follow `Codex.md` and `spec/MILESTONE-5-PLAN.md`. Results and review steps are in
+`spec/MILESTONE-5-REVIEW.md`; hosting and rollback are described in
+`spec/MILESTONE-5-HOSTING.md`, and the manual device/usability checklist in
+`spec/MILESTONE-5-DEVICE-CHECKLIST.md`. At the end of this milestone,
 submit the runnable result and evidence for developer review and stop until
 explicit approval. Do not begin the next milestone automatically.

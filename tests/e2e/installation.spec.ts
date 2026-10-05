@@ -44,7 +44,7 @@ test('real Chrome installation launches a standalone offline game and is removed
       expect(Math.abs(board!.width - board!.height)).toBeLessThan(1);
       layouts.push(viewport); await screenshot(app, `installed-standalone-${viewport.width}x${viewport.height}`);
     }
-    await writeFile('artifacts/milestone-4/installation-report.json', JSON.stringify({
+    await writeFile('artifacts/milestone-5/installation-report.json', JSON.stringify({
       browser: context.browser()?.version(), manifestId, targetId, osState,
       displayMode: 'standalone', installedVia: 'PWA.install', launchedVia: 'PWA.launch',
       offlineDocumentFromServiceWorker: response?.fromServiceWorker(), outcome: 'You win', layouts,
