@@ -1,0 +1,11 @@
+/* This small shell remains readable even when the React bundle cannot load. */
+[hidden] { display: none !important; }
+html { color: #173e35; background: #4f7d2a; font-family: sans-serif; }
+body { margin: 0; }
+.connection-shell { box-sizing: border-box; width: min(calc(100% - 32px), 424px); margin: 32px auto; background: #f5eccd; border-radius: 8px; box-shadow: 0 4px 12px #00000026; }
+.connection-shell header { padding: 24px; border-bottom: 1px solid #d6c89c; }
+.connection-shell h1 { font-size: 28px; margin: 0; }
+.connection-copy { min-height: 360px; padding: 32px 24px; display: flex; flex-direction: column; justify-content: center; text-align: center; gap: 16px; }
+.connection-copy h2 { font-size: 22px; margin: 0; }
+.connection-copy p { font-size: 16px; line-height: 1.5; margin: 0; }
+.connection-copy h2:focus { outline: 2px solid #173e35; outline-offset: 6px; }

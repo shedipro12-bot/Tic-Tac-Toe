@@ -27,6 +27,7 @@ export function createGameAudio(makeAudio = (url: string) => new Audio(url)): Ga
         if (pool.has(key)) continue;
         try {
           const audio = makeAudio(url);
+          audio.crossOrigin = 'anonymous';
           audio.preload = 'auto';
           audio.volume = 0.3;
           pool.set(key, audio);

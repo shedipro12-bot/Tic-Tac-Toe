@@ -92,7 +92,7 @@ for (const soundOn of [false, true]) for (const animationOn of [false, true]) {
       if (outcome === 'draw') await screenshot(page, `settings-sound-${soundOn}-animations-${animationOn}`);
       await back(page); await start(page);
       await cell(page, findHumanPath(outcome, random)[0]).click();
-      expect(await runningAnimations(page)).toBe(animationOn ? 1 : 0);
+      await expect.poll(() => runningAnimations(page)).toBe(animationOn ? 1 : 0);
       await page.clock.runFor(400);
       for (const index of findHumanPath(outcome, random).slice(1)) {
         await cell(page, index).click(); await page.clock.runFor(400);
@@ -135,6 +135,8 @@ test('changing reduced motion stops a live animation; reversal does not replay i
   expect(await runningAnimations(page)).toBe(0);
 });
 
+test.describe('uncached feedback fallback', () => {
+test.use({ serviceWorkers: 'block' });
 test('missing font and sounds, initial reduced motion and unavailable audio preserve navigation and results', async ({ page }) => {
   const errors: string[] = []; page.on('pageerror', error => errors.push(error.message));
   await page.route('**/*.woff*', route => route.abort());
@@ -150,6 +152,7 @@ test('missing font and sounds, initial reduced motion and unavailable audio pres
   await page.addInitScript(() => { window.Audio = function () { throw new Error('No audio'); } as unknown as typeof Audio; });
   await page.reload(); await start(page); await playPath(page, 'human-win', 0);
   await expect(page.getByRole('status')).toHaveText('You win'); expect(errors).toEqual([]);
+});
 });
 
 test('internal error allows Settings and returns to the same recoverable board', async ({ page }) => {

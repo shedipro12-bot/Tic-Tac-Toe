@@ -5,8 +5,8 @@ import type { Difficulty, Outcome } from '../../src/features/game/domain/types';
 
 export const cell = (page: Page, index: number) => page.getByRole('group', { name: 'Tic-Tac-Toe board' }).getByRole('button').nth(index);
 export async function screenshot(page: Page, name: string) {
-  await mkdir('artifacts/milestone-3', { recursive: true });
-  await page.screenshot({ path: `artifacts/milestone-3/${name}.png`, fullPage: true });
+  await mkdir('artifacts/milestone-4', { recursive: true });
+  await page.screenshot({ path: `artifacts/milestone-4/${name}.png`, fullPage: true });
 }
 export async function open(page: Page, randomValue = 0.99) {
   await page.addInitScript(value => { Math.random = () => value; }, randomValue);

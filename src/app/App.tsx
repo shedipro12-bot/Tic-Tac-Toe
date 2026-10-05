@@ -4,6 +4,7 @@ import { useGameFeedback } from '../features/game/hooks/useGameFeedback';
 import { SetupPanel } from '../features/game/components/SetupPanel';
 import { GameScreen } from '../features/game/components/GameScreen';
 import { SettingsPanel } from '../features/settings/SettingsPanel';
+import { OfflineNotice } from '../pwa/OfflineNotice';
 import styles from './App.module.css';
 
 export function App() {
@@ -43,6 +44,7 @@ export function App() {
           ? <SetupPanel difficulty={state.selectedDifficulty} dispatch={dispatch} />
           : <GameScreen state={state} dispatch={dispatch} feedback={feedback} />}
       </div>
+      <OfflineNotice />
     </main>
   );
 }

@@ -1,0 +1,173 @@
+{
+  "buildId": "14f5ec45-3c1c-4d21-ba41-5ee296892d1f",
+  "entries": [
+    {
+      "url": "manifest.webmanifest",
+      "revision": "bb8e5aea210f6032c38767e7f75720bc",
+      "size": 455,
+      "integrity": "sha256-f+qbZAD3mBNTRqvm/MTkZvkYRkj/26O/cGvcnJJgFMs="
+    },
+    {
+      "url": "index.html",
+      "revision": "5e77481edddb52157d03c72c0a7902de",
+      "size": 979,
+      "integrity": "sha256-35m//k+gpWu8OXQI11dtKECGqsMley81e5Bb/+foKGg="
+    },
+    {
+      "url": "boot-meta.json",
+      "revision": "952db64a2a143726cc267ac4f364f31d",
+      "size": 168,
+      "integrity": "sha256-qozDfKf7CKrysMiEqE/DpeYJIPGBtPuah6lBc+Nctxc="
+    },
+    {
+      "url": "textures/wood.svg",
+      "revision": "870b9d72ce90d04961985e117cea51c1",
+      "size": 626,
+      "integrity": "sha256-Vg5fhdKXVeAFXZ/WyAX3ibl/HCa/MYqPz5rpBgvGDKc="
+    },
+    {
+      "url": "textures/grass.svg",
+      "revision": "102e25a94454f8378a38eb8947370309",
+      "size": 101982,
+      "integrity": "sha256-49sraPJb1WvusKERMRtnj5thb04cg6NXziiClU+esTU="
+    },
+    {
+      "url": "textures/chalk.svg",
+      "revision": "841477402c4bae214587fc27838b9c50",
+      "size": 338,
+      "integrity": "sha256-o5HXF43BsNZTGERug3BJ4/tHvi+EKOSHTjtYva0vhwQ="
+    },
+    {
+      "url": "sounds/win-v1.mp3",
+      "revision": "87310d878046d50c5c91cbd514a3d0c8",
+      "size": 4640,
+      "integrity": "sha256-Qx+yhh+mxZ1YL/BtjIjZwjv9MiR5LIAAeuCmsYZuftU="
+    },
+    {
+      "url": "sounds/move-v1.mp3",
+      "revision": "212416da133ed18c92ae143a510a7240",
+      "size": 1505,
+      "integrity": "sha256-hJxDjJVfU5CAXS/kErcCzMv6EdezzoOsU+fVmB+UFHQ="
+    },
+    {
+      "url": "sounds/loss-v1.mp3",
+      "revision": "4d559251217905f7a434230c45592b94",
+      "size": 4013,
+      "integrity": "sha256-86kGW6I+gqT8r8KDL46ub9fPUQGwvU3lgrRf1Yuwmvk="
+    },
+    {
+      "url": "sounds/draw-v1.mp3",
+      "revision": "84c5e2b1b7aa1fc1973b3315fd7a59a7",
+      "size": 3595,
+      "integrity": "sha256-FkbHhSQrVjijST0jsSLP0p8OBpfwoPMdgm9nlCcQU6Q="
+    },
+    {
+      "url": "icons/maskable-512.png",
+      "revision": "7f046dc2715e11c84760552d7d884a6a",
+      "size": 19791,
+      "integrity": "sha256-kcT1syHXv85meTJhNhJNkiE2iax0p9kwL5PlYLdXQb8="
+    },
+    {
+      "url": "icons/icon-512.png",
+      "revision": "67f71acb80a08620eb0ca7df6cd08369",
+      "size": 24317,
+      "integrity": "sha256-mdpa70xYp6giOlBUnVWeyC7MZNYgMHJfezwjYCTE9+M="
+    },
+    {
+      "url": "icons/icon-192.png",
+      "revision": "79cb90d12e135ae6e4d5678e755d19bd",
+      "size": 8402,
+      "integrity": "sha256-J1ilNoHcy2eMUiY5/GVqOOizuhiWoevQTfvuOR7XnP8="
+    },
+    {
+      "url": "icons/apple-touch-180.png",
+      "revision": "040cd71ea2b564609b7b4dad9e30f1af",
+      "size": 8318,
+      "integrity": "sha256-Sls/3mtDRIlhezZ4YxDMHaxYOhX2sDMf4ifH+td6HsY="
+    },
+    {
+      "url": "assets/workbox-window.prod.es5-Bd17z0YL.js",
+      "revision": null,
+      "size": 5653,
+      "integrity": "sha256-F7zBfWDcePkng0uIDDlkmwOvRv0fXNu4xCxa4rUV3Ok="
+    },
+    {
+      "url": "assets/nunito-sans-latin-800-normal-MgCk9Q3Y.woff2",
+      "revision": null,
+      "size": 13876,
+      "integrity": "sha256-TIOeVsvvG739UJZw9SNzDiQpiq+ad5HgFRAxsCPBLkw="
+    },
+    {
+      "url": "assets/nunito-sans-latin-800-normal-DOf_K5Iw.woff",
+      "revision": null,
+      "size": 17520,
+      "integrity": "sha256-7Gtsi5myd1xCKacsrzRKNwfbU1/y9RIUtdDzr4EJrgU="
+    },
+    {
+      "url": "assets/nunito-sans-latin-700-normal-CLVG92B9.woff",
+      "revision": null,
+      "size": 17408,
+      "integrity": "sha256-/n7zocPKJ8ks9t4NBg9NQts+VqK0isAMu1tTWQmwonY="
+    },
+    {
+      "url": "assets/nunito-sans-latin-700-normal-CICRJDmU.woff2",
+      "revision": null,
+      "size": 13836,
+      "integrity": "sha256-y4QjjnuFLy0iuRpZgonxOzHLx6LWGP0sBijstpRZ++s="
+    },
+    {
+      "url": "assets/nunito-sans-latin-600-normal-DLks-Kj1.woff",
+      "revision": null,
+      "size": 17644,
+      "integrity": "sha256-WQ/v9pJuTiWZfMPuIju2BtNkzCCWnA3AVeZAaOc4fSQ="
+    },
+    {
+      "url": "assets/nunito-sans-latin-600-normal-BtVRvDNj.woff2",
+      "revision": null,
+      "size": 14008,
+      "integrity": "sha256-4D4xK4t6vYtp7O9AYN7WJvgORXI77NE2dq2Cc89Wim4="
+    },
+    {
+      "url": "assets/nunito-sans-latin-400-normal-DY9yCUyQ.woff",
+      "revision": null,
+      "size": 17512,
+      "integrity": "sha256-l4v1BdujQpb3fnBwbiQUjU1BvcMnMxv5sICKM/xP+VU="
+    },
+    {
+      "url": "assets/nunito-sans-latin-400-normal-AkRraKH2.woff2",
+      "revision": null,
+      "size": 13892,
+      "integrity": "sha256-2Zdt0dycDWUEa1KBDnzGnPwinumTlij/5jfhfv5O8e0="
+    },
+    {
+      "url": "assets/main-DsvAqYmM.js",
+      "revision": null,
+      "size": 236910,
+      "integrity": "sha256-Kk88e7IAi2WOGsBKxM5iZEFYpfo/g9/bjpwlxgxBPn0="
+    },
+    {
+      "url": "assets/main-CGlf31-z.css",
+      "revision": null,
+      "size": 8988,
+      "integrity": "sha256-wolonHffUFCQouUkocA+dBlAH2x7Iy+0f2ZG3s94gXc="
+    },
+    {
+      "url": "assets/index-T0N7mwX7.css",
+      "revision": null,
+      "size": 689,
+      "integrity": "sha256-n6af1SX5m0V9W94mWLPfD4X+zy872AY+SX5O+qZ7zew="
+    },
+    {
+      "url": "assets/index-D5D0G9Rg.js",
+      "revision": null,
+      "size": 2875,
+      "integrity": "sha256-chCGyIJ24XCYi02K4FBc5wJclex6JaLvaqJJ636mevo="
+    },
+    {
+      "url": "sw-support-14f5ec45-3c1c-4d21-ba41-5ee296892d1f.js",
+      "revision": null,
+      "integrity": "sha256-fHL78XJQEqLF7dlvqUIkTygLrWABmxj+7kJcikkrrVY=",
+      "size": 0
+    }
+  ]
+}

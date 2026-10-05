@@ -7,6 +7,7 @@
   box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
   overflow: hidden;
 }
+.offlineNotice { font-size: 14px; font-weight: 400; padding: 12px 16px; text-align: center; border-top: 1px solid #d6c89c; }
 .header { padding: 24px 24px 20px; border-bottom: 1px solid #d6c89c; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
 .header h1 { font-size: 28px; font-weight: 800; letter-spacing: -0.7px; }
 .secondary { display: inline-flex; gap: 4px; align-items: center; justify-content: center; min-height: 48px; padding: 8px 12px; border: 1.5px solid var(--chalkboard); border-radius: 8px; color: var(--chalkboard); background: var(--cream); font-size: 16px; font-weight: 600; }

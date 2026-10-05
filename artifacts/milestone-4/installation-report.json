@@ -1,0 +1,25 @@
+{
+  "browser": "154.0.8037.95",
+  "manifestId": "http://127.0.0.1:4173/",
+  "targetId": "612E9E8DD3176AEFB28C24E651F8CEBC",
+  "osState": {
+    "badgeCount": 0,
+    "fileHandlers": []
+  },
+  "displayMode": "standalone",
+  "installedVia": "PWA.install",
+  "launchedVia": "PWA.launch",
+  "offlineDocumentFromServiceWorker": true,
+  "outcome": "You win",
+  "layouts": [
+    {
+      "width": 390,
+      "height": 844
+    },
+    {
+      "width": 844,
+      "height": 390
+    }
+  ],
+  "cleanup": "PWA.uninstall in finally"
+}

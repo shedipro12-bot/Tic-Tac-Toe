@@ -1,0 +1,195 @@
+{
+  "resources": [
+    {
+      "url": "manifest.webmanifest",
+      "status": 200,
+      "length": 455,
+      "duration": null
+    },
+    {
+      "url": "index.html",
+      "status": 200,
+      "length": 979,
+      "duration": null
+    },
+    {
+      "url": "boot-meta.json",
+      "status": 200,
+      "length": 168,
+      "duration": null
+    },
+    {
+      "url": "textures/wood.svg",
+      "status": 200,
+      "length": 626,
+      "duration": null
+    },
+    {
+      "url": "textures/grass.svg",
+      "status": 200,
+      "length": 101982,
+      "duration": null
+    },
+    {
+      "url": "textures/chalk.svg",
+      "status": 200,
+      "length": 338,
+      "duration": null
+    },
+    {
+      "url": "sounds/win-v1.mp3",
+      "status": 200,
+      "length": 4640,
+      "duration": 0.5149583333333333
+    },
+    {
+      "url": "sounds/move-v1.mp3",
+      "status": 200,
+      "length": 1505,
+      "duration": 0.11497916666666666
+    },
+    {
+      "url": "sounds/loss-v1.mp3",
+      "status": 200,
+      "length": 4013,
+      "duration": 0.42995833333333333
+    },
+    {
+      "url": "sounds/draw-v1.mp3",
+      "status": 200,
+      "length": 3595,
+      "duration": 0.36995833333333333
+    },
+    {
+      "url": "icons/maskable-512.png",
+      "status": 200,
+      "length": 19791,
+      "duration": null
+    },
+    {
+      "url": "icons/icon-512.png",
+      "status": 200,
+      "length": 24317,
+      "duration": null
+    },
+    {
+      "url": "icons/icon-192.png",
+      "status": 200,
+      "length": 8402,
+      "duration": null
+    },
+    {
+      "url": "icons/apple-touch-180.png",
+      "status": 200,
+      "length": 8318,
+      "duration": null
+    },
+    {
+      "url": "assets/workbox-window.prod.es5-Bd17z0YL.js",
+      "status": 200,
+      "length": 5653,
+      "duration": null
+    },
+    {
+      "url": "assets/nunito-sans-latin-800-normal-MgCk9Q3Y.woff2",
+      "status": 200,
+      "length": 13876,
+      "duration": null
+    },
+    {
+      "url": "assets/nunito-sans-latin-800-normal-DOf_K5Iw.woff",
+      "status": 200,
+      "length": 17520,
+      "duration": null
+    },
+    {
+      "url": "assets/nunito-sans-latin-700-normal-CLVG92B9.woff",
+      "status": 200,
+      "length": 17408,
+      "duration": null
+    },
+    {
+      "url": "assets/nunito-sans-latin-700-normal-CICRJDmU.woff2",
+      "status": 200,
+      "length": 13836,
+      "duration": null
+    },
+    {
+      "url": "assets/nunito-sans-latin-600-normal-DLks-Kj1.woff",
+      "status": 200,
+      "length": 17644,
+      "duration": null
+    },
+    {
+      "url": "assets/nunito-sans-latin-600-normal-BtVRvDNj.woff2",
+      "status": 200,
+      "length": 14008,
+      "duration": null
+    },
+    {
+      "url": "assets/nunito-sans-latin-400-normal-DY9yCUyQ.woff",
+      "status": 200,
+      "length": 17512,
+      "duration": null
+    },
+    {
+      "url": "assets/nunito-sans-latin-400-normal-AkRraKH2.woff2",
+      "status": 200,
+      "length": 13892,
+      "duration": null
+    },
+    {
+      "url": "assets/main-DsvAqYmM.js",
+      "status": 200,
+      "length": 236910,
+      "duration": null
+    },
+    {
+      "url": "assets/main-CGlf31-z.css",
+      "status": 200,
+      "length": 8988,
+      "duration": null
+    },
+    {
+      "url": "assets/index-T0N7mwX7.css",
+      "status": 200,
+      "length": 689,
+      "duration": null
+    },
+    {
+      "url": "assets/index-D5D0G9Rg.js",
+      "status": 200,
+      "length": 2875,
+      "duration": null
+    },
+    {
+      "url": "sw-support-14f5ec45-3c1c-4d21-ba41-5ee296892d1f.js",
+      "status": 200,
+      "length": 7063,
+      "duration": null
+    }
+  ],
+  "ranges": [
+    {
+      "status": 206,
+      "length": 100,
+      "type": "audio/mpeg"
+    },
+    {
+      "status": 206,
+      "length": 10,
+      "type": "audio/mpeg"
+    },
+    {
+      "status": 416,
+      "length": 0,
+      "type": null
+    },
+    {
+      "status": 416,
+      "length": 0,
+      "type": null
+    }
+  ],
+  "font": true
+}

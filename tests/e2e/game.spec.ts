@@ -120,6 +120,8 @@ for (const viewport of [{ width: 320, height: 568 }, { width: 844, height: 390 }
   });
 }
 
+test.describe('uncached font fallback', () => {
+test.use({ serviceWorkers: 'block' });
 test('font failure, reduced motion and refresh preserve a usable local game', async ({ page }) => {
   await page.route('**/*.woff*', route => route.abort());
   await page.emulateMedia({ reducedMotion: 'reduce' });
@@ -131,6 +133,7 @@ test('font failure, reduced motion and refresh preserve a usable local game', as
   await expect(page.getByRole('button', { name: 'Start Game' })).toBeVisible();
   await expect(page.getByRole('radio', { name: 'Medium', exact: true })).toBeChecked();
 });
+});
 
 test('runtime only requests local assets and writes no player storage', async ({ page }) => {
   const requests: string[] = []; const errors: string[] = [];
@@ -141,7 +144,7 @@ test('runtime only requests local assets and writes no player storage', async ({
   expect(errors).toEqual([]);
   expect(requests.every(url => new URL(url).origin === 'http://127.0.0.1:4173')).toBe(true);
   expect(await page.evaluate(() => ({ local: localStorage.length, session: sessionStorage.length, cookies: document.cookie }))).toEqual({ local: 0, session: 0, cookies: '' });
-  expect(await page.evaluate(() => navigator.serviceWorker.getRegistrations().then(registrations => registrations.length))).toBe(0);
+  await expect.poll(() => page.evaluate(() => navigator.serviceWorker.getRegistrations().then(registrations => registrations.map(registration => registration.scope)))).toEqual(['http://127.0.0.1:4173/']);
 });
 
 test.describe('touch interaction', () => {
