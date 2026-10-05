@@ -60,9 +60,20 @@
     "hostedTotal": 15,
     "hostedBatches": {"originalProductionSmoke": 3, "originalPreviewSmoke": 3, "sameOriginLiveUpdate": 1, "originalOriginIsolation": 1, "finalProductionSmoke": 3, "finalPreviewSmoke": 3, "finalOriginIsolation": 1},
     "physicalDeviceOfflineTotal": 64,
-    "physicalDeviceOfflineNotPerformed": 64,
+    "physicalDeviceOfflinePassed": null,
+    "physicalDeviceOfflineMatrixDocumented": false,
+    "userReportedDeviceCheck": {
+      "reportedOn": "2026-10-05",
+      "source": "developer report in chat",
+      "androidWorks": true,
+      "iphoneWorks": true,
+      "airplaneModeAfterCloseAndReopenWorksOnBoth": true,
+      "deviceAndBrowserVersionsProvided": false,
+      "installedModeConfirmed": false,
+      "testedBuildIdProvided": false
+    },
     "usabilityParticipantsPlanned": 10,
     "usabilityParticipantsTested": 0
   },
-  "releaseStatus": "Published candidate for developer review; physical-device and usability checks pending; MVP not approved"
+  "releaseStatus": "Published candidate; basic fresh offline play on Android and iPhone confirmed by developer report; full device matrix and usability checks pending; MVP not approved"
 }
