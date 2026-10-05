@@ -35,7 +35,7 @@ Node ‏24.15.0, npm ‏11.12.1, Chrome ‏154.0.8037.95 במחשב Windows.
 
 ## פרסום
 
-נוצר פרויקט Git-integrated בשם **shedipro12-tic-tac-toe**, דרך חיבור GitHub הקיים של הריפו. המועמד הסופי בשני הענפים נבנה מ־commit ‏`e6ca366e281d833c0d424bc51f39aa4aa6b3e470`; קוד המשחק זהה ל־`1c08320`, שבו נבדק העדכון. העלאת תיעוד וראיות הפעילה בנייה מחדש; כללי ההחרגה תוקנו ונוספו בדיקות לפלט החדש. main נשאר בנקודת M4; לא בוצע merge.
+נוצר פרויקט Git-integrated בשם **shedipro12-tic-tac-toe**, דרך חיבור GitHub הקיים של הריפו. המועמד הסופי בשני הענפים נבנה מ־commit ‏`e6ca366e281d833c0d424bc51f39aa4aa6b3e470`; קוד המשחק זהה ל־`1c08320`, שבו נבדק העדכון. העלאת תיעוד וראיות הפעילה בנייה מחדש; כללי ההחרגה תוקנו ונוספו בדיקות לפלט החדש. ב־5 באוקטובר 2026 הועבר Milestone 5 גם לענף main בהתקדמות ישירה (fast-forward), בהתאם לבקשת המפתח להעלות לגיטהאב. ההעלאה כוללת את הקוד, התיעוד והראיות; היא אינה תוצאת בדיקות מכשירים או שימושיות. ענף production ב־Cloudflare נשאר `codex/milestone-5`.
 
 המועמד הסופי: production ב־https://shedipro12-tic-tac-toe.pages.dev/, כתובת קבועה https://cfc873f2.shedipro12-tic-tac-toe.pages.dev/, deployment ‏`cfc873f2-84d8-488d-aa26-0d87435bcc62`, build ‏`1c619dd8-91ac-4e34-9ec9-58febff546d7`. preview באותו alias להלן, כתובת קבועה https://b9ac0ab4.shedipro12-tic-tac-toe.pages.dev/, deployment ‏`b9ac0ab4-3eed-425a-b43c-245e0aa04759`, build ‏`d9abcf1e-8f48-410b-8177-2ed8f1106ca3`. שבע בדיקות smoke/isolation עברו על הפלט הזה.
 

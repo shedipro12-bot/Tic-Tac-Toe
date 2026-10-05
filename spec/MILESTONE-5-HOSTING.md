@@ -4,7 +4,7 @@
 
 המפתח בחר בפרויקט Cloudflare Pages **חדש**. נוצר פרויקט **shedipro12-tic-tac-toe** באמצעות חיבור GitHub הקיים. production ו־preview נבנו ופורסמו; בדיקות HTTPS, כותרות, משחק, offline, התאוששות ועדכון באותו alias עברו. לא נוצר token בקוד ולא נרשמו סודות בריפו.
 
-הריפו: https://github.com/shedipro12-bot/Tic-Tac-Toe. ענף production שנבחר הוא `codex/milestone-5`; ענף הבדיקה הוא `codex/milestone-5-preview`. כך המועמד נגיש לביקורת בלי למזג ל־main, שנשאר ב־M4. ההצעה המקורית בתוכנית להשתמש ב־main אינה ההגדרה בפועל. מעבר עתידי ל־main מחייב בחירת הענף בהגדרות Pages ובדיקת הפלט; הוא לא בוצע במסגרת המסירה.
+הריפו: https://github.com/shedipro12-bot/Tic-Tac-Toe. ענף production שנבחר הוא `codex/milestone-5`; ענף הבדיקה הוא `codex/milestone-5-preview`. ב־5 באוקטובר 2026, בעקבות בקשת המפתח להעלות לגיטהאב, הועבר המועמד גם ל־main בהתקדמות ישירה (fast-forward), יחד עם הקוד, התיעוד והראיות. ענף הפרסום ב־Cloudflare עדיין `codex/milestone-5`; מעבר לפרסום מתוך main מחייב בחירת הענף בהגדרות Pages ובדיקת הפלט. בדיקות מכשירים ושימושיות נשארות פתוחות.
 
 ## המועמדים שנבדקו — 5 באוקטובר 2026
 
