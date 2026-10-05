@@ -15,7 +15,7 @@ export default defineConfig({
     name: 'bootstrap-metadata',
     generateBundle(_options, bundle) {
       const core = Object.values(bundle).filter(item => /\.(js|css)$/.test(item.fileName)).map(item => `/${item.fileName}`);
-      this.emitFile({ type: 'asset', fileName: 'boot-meta.json', source: JSON.stringify({ core }) });
+      this.emitFile({ type: 'asset', fileName: 'boot-meta.json', source: JSON.stringify({ buildId, core }) });
     },
   }, VitePWA({
     strategies: 'generateSW', registerType: 'prompt', injectRegister: null,
