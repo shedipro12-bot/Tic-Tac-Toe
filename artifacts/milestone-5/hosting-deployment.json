@@ -2,15 +2,15 @@
   "project": "shedipro12-tic-tac-toe",
   "provider": "Cloudflare Pages",
   "repository": "https://github.com/shedipro12-bot/Tic-Tac-Toe",
-  "sourceCommit": "e6ca366e281d833c0d424bc51f39aa4aa6b3e470",
+  "sourceCommit": "896a46ff8e6516d90710f60ded65ff6cf6951c92",
   "liveUpdateSourceCommit": "1c083200b1be8264a88a57101b4772854917262f",
-  "verifiedOn": "2026-10-05",
+  "verifiedOn": "2026-10-06",
   "production": {
-    "branch": "codex/milestone-5",
+    "branch": "main",
     "url": "https://shedipro12-tic-tac-toe.pages.dev/",
-    "deploymentUrl": "https://cfc873f2.shedipro12-tic-tac-toe.pages.dev/",
-    "deploymentId": "cfc873f2-84d8-488d-aa26-0d87435bcc62",
-    "buildId": "1c619dd8-91ac-4e34-9ec9-58febff546d7"
+    "deploymentUrl": "https://08862471.shedipro12-tic-tac-toe.pages.dev/",
+    "deploymentId": "08862471-0039-4c8d-8c71-05141b942218",
+    "buildId": "06c3a2de-aeed-4e03-9342-aad0700ea326"
   },
   "preview": {
     "branch": "codex/milestone-5-preview",
@@ -40,8 +40,14 @@
     "buildSystem": 3,
     "buildCache": "disabled",
     "buildComments": "disabled",
-    "watchIncludes": ["*"],
-    "watchExcludes": ["spec/*", "artifacts/*", "README.md"],
+    "watchIncludes": [
+      "*"
+    ],
+    "watchExcludes": [
+      "spec/*",
+      "artifacts/*",
+      "README.md"
+    ],
     "previewBranchControl": "all non-production branches",
     "functions": false,
     "webAnalytics": false
@@ -49,16 +55,25 @@
   "runtime": {
     "node": "24.15.0",
     "npm": "11.12.1",
-    "verifiedIn": "local runs and preview B build log"
+    "verifiedIn": "local runs, preview B build log, and main production build log"
   },
   "checks": {
     "unitPassed": 59,
     "unitTotal": 59,
     "localBrowserPassed": 85,
     "localBrowserTotal": 85,
-    "hostedPassed": 15,
-    "hostedTotal": 15,
-    "hostedBatches": {"originalProductionSmoke": 3, "originalPreviewSmoke": 3, "sameOriginLiveUpdate": 1, "originalOriginIsolation": 1, "finalProductionSmoke": 3, "finalPreviewSmoke": 3, "finalOriginIsolation": 1},
+    "hostedPassed": 18,
+    "hostedTotal": 18,
+    "hostedBatches": {
+      "originalProductionSmoke": 3,
+      "originalPreviewSmoke": 3,
+      "sameOriginLiveUpdate": 1,
+      "originalOriginIsolation": 1,
+      "finalProductionSmoke": 3,
+      "finalPreviewSmoke": 3,
+      "finalOriginIsolation": 1,
+      "mainProductionSmoke": 3
+    },
     "physicalDeviceOfflineTotal": 64,
     "physicalDeviceOfflinePassed": null,
     "physicalDeviceOfflineMatrixDocumented": false,
@@ -73,7 +88,22 @@
       "testedBuildIdProvided": false
     },
     "usabilityParticipantsPlanned": 10,
-    "usabilityParticipantsTested": 0
+    "usabilityParticipantsTested": null
   },
-  "releaseStatus": "Published candidate; basic fresh offline play on Android and iPhone confirmed by developer report; full device matrix and usability checks pending; MVP not approved"
+  "releaseStatus": "Delivery approved by developer; acceptance test marked passed by developer report; published from main; detailed device-matrix and participant measurements not supplied",
+  "previousProduction": {
+    "branch": "codex/milestone-5",
+    "url": "https://shedipro12-tic-tac-toe.pages.dev/",
+    "deploymentUrl": "https://cfc873f2.shedipro12-tic-tac-toe.pages.dev/",
+    "deploymentId": "cfc873f2-84d8-488d-aa26-0d87435bcc62",
+    "buildId": "1c619dd8-91ac-4e34-9ec9-58febff546d7"
+  },
+  "developerAcceptance": {
+    "acceptedOn": "2026-10-06",
+    "source": "developer instruction in chat to mark the test passed and finish delivery",
+    "acceptanceTestPassed": true,
+    "deliveryApproved": true,
+    "detailedDeviceMatrixMeasurementsProvided": false,
+    "participantMeasurementsProvided": false
+  }
 }

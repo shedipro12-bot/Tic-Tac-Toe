@@ -1,4 +1,4 @@
-# Tic-Tac-Toe — Milestone 5 candidate
+# Tic-Tac-Toe — Milestone 5
 
 A mobile-friendly, English-language game against a local computer opponent.
 Choose Easy, Medium or Hard, press **Start Game**, and play X against O.
@@ -47,8 +47,10 @@ Returning to a visible online document checks for updates, at most once per
 
 The candidate is published at [Play Tic-Tac-Toe](https://shedipro12-tic-tac-toe.pages.dev/).
 Cloudflare HTTPS, headers, offline play, recovery, a real preview update and
-preview/production isolation were verified. Physical-device and user trials
-remain pending. See `spec/MILESTONE-5-REVIEW.md` for the actual completion status.
+preview/production isolation were verified. The developer accepted delivery on
+6 October 2026 after confirming Android/iPhone play, including reopening offline.
+Detailed device-matrix and participant measurements were not supplied; the
+acceptance and evidence gaps are recorded in `spec/MILESTONE-5-REVIEW.md`.
 
 ## Run locally
 
@@ -123,9 +125,10 @@ available in `playwright-report/` after the browser suite.
 
 ### Verify the hosted candidate
 
-Fifteen HTTPS checks passed in separate Cloudflare runs: eight original checks
-(including a live update at the same preview alias), then seven smoke/isolation
-checks against the final rebuilt candidate. To repeat the production checks in PowerShell:
+Eighteen HTTPS checks passed in separate Cloudflare runs: eight original checks
+(including a live update at the same preview alias), seven smoke/isolation
+checks against the rebuilt candidate, and three production checks after publishing
+the accepted release from main. To repeat the production checks in PowerShell:
 
 ```powershell
 $env:MILESTONE5_HOSTED_BASE_URL = 'https://shedipro12-tic-tac-toe.pages.dev/'

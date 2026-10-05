@@ -4,7 +4,16 @@
 
 המפתח בחר בפרויקט Cloudflare Pages **חדש**. נוצר פרויקט **shedipro12-tic-tac-toe** באמצעות חיבור GitHub הקיים. production ו־preview נבנו ופורסמו; בדיקות HTTPS, כותרות, משחק, offline, התאוששות ועדכון באותו alias עברו. לא נוצר token בקוד ולא נרשמו סודות בריפו.
 
-הריפו: https://github.com/shedipro12-bot/Tic-Tac-Toe. ענף production שנבחר הוא `codex/milestone-5`; ענף הבדיקה הוא `codex/milestone-5-preview`. ב־5 באוקטובר 2026, בעקבות בקשת המפתח להעלות לגיטהאב, הועבר המועמד גם ל־main בהתקדמות ישירה (fast-forward), יחד עם הקוד, התיעוד והראיות. ענף הפרסום ב־Cloudflare עדיין `codex/milestone-5`; מעבר לפרסום מתוך main מחייב בחירת הענף בהגדרות Pages ובדיקת הפלט. בדיקות מכשירים ושימושיות נשארות פתוחות.
+הריפו: https://github.com/shedipro12-bot/Tic-Tac-Toe. ענף production הנוכחי הוא **main**, עם פרסום אוטומטי פעיל. ענף הבדיקה הוא `codex/milestone-5-preview`. המועמד הועבר ל־main ב־5 באוקטובר 2026; ב־6 באוקטובר המפתח אישר לסמן את הבדיקה כעברה ולסיים, ואז הועבר גם מקור הפרסום ב־Cloudflare ל־main. האישור ופערי המדידה מפורטים במסמך המסירה.
+
+## גרסת המסירה — 6 באוקטובר 2026
+
+- כתובת: https://shedipro12-tic-tac-toe.pages.dev/.
+- כתובת קבועה: https://08862471.shedipro12-tic-tac-toe.pages.dev/.
+- מקור: main, commit ‏`896a46ff8e6516d90710f60ded65ff6cf6951c92`.
+- deployment: ‏`08862471-0039-4c8d-8c71-05141b942218`; buildId: ‏`06c3a2de-aeed-4e03-9342-aad0700ea326`.
+- יומן Cloudflare מאשר Node ‏24.15.0, npm ‏11.12.1, ‏59/59 בדיקות יחידה ואימותי טיפוסים/PWA/hosting. שלוש בדיקות HTTPS נוספות עברו על הפלט הזה: HTTP/CSP ושלמות הנכסים; משחק, שמע ופתיחה offline; התאוששות מכשל קוד חסר אחרי חזרת הרשת.
+- הראיות נשמרו ב־`artifacts/milestone-5/hosted-main-production-{http,game,bootstrap}.json` ובצילום offline. הפלטים להלן מתעדים את הבדיקות הקודמות ואינם מזהי הפלט הנוכחי.
 
 ## המועמדים שנבדקו — 5 באוקטובר 2026
 
@@ -24,16 +33,16 @@
 ## הגדרות הבנייה
 
 - Framework preset: None; root: שורש הריפו; output: `dist`.
-- Build command הנוכחי: `node --version && npm --version && npm ci && npm test && npm run build`. פלט production הנבדק נבנה באותן בדיקות באמצעות הפקודה ללא שתי הדפסות הגרסה; הדפסות נוספו לפני preview B.
+- Build command הנוכחי: `node --version && npm --version && npm ci && npm test && npm run build`. הפלט הנוכחי מ־main נבנה בפקודה הזו; הדפסות הגרסה נוספו לפני preview B המתועדת לעיל.
 - Node: ‏24.15.0 דרך `.node-version`, זהה לבדיקה המקומית. יומן preview B מאשר בפועל Node ‏24.15.0 ו־npm ‏11.12.1 לאחר בחירת Node.
 - משתנה סביבה `SKIP_DEPENDENCY_INSTALL=1` ב־preview וב־production: ההתקנה נעשית ב־npm ci מתוך הנעילה.
-- production deployments אוטומטיים עבור `codex/milestone-5`; preview deployments עבור ענפים אחרים לפי ברירת המחדל. ענף הבדיקה שנוצר הוא `codex/milestone-5-preview`.
+- production deployments אוטומטיים עבור `main`; preview deployments עבור ענפים אחרים לפי ברירת המחדל. ענף הבדיקה שנוצר הוא `codex/milestone-5-preview`.
 - Build system: Version 3; build cache: Disabled; build comments: Disabled.
 - Build watch paths: include `*`; exclude `spec/*`, ‏`artifacts/*`, ‏`README.md`. הגדרת `**` הקודמת לא מנעה בנייה בעקבות התיעוד ולכן תוקנה לתחביר המתועד. לפי [Build watch paths](https://developers.cloudflare.com/pages/configuration/build-watch-paths/), כוכבית יחידה כוללת גם תיקיות מקוננות. מטרת הכללים היא לשמר פלט שנבדק בעת העלאת תיעוד בלבד; יש לוודא buildId לאחר push. שינוי קוד ממשיך להפעיל בנייה, וב־commit מעורב תידרש בדיקה למזהה החדש.
 - חיבור GitHub הקיים כבר כלל גישה לריפו. לא ניתנה הרשאה חדשה דרך האוטומציה.
 - ללא Functions, Web Analytics, תוספי משחק, שירותי AI או משתני סביבה סודיים לאפליקציה.
 
-לפני שינוי ענף production או push עם שינוי קוד יש לבדוק איזה commit יפורסם אוטומטית. פרסום המועמד אינו אישור למיזוג או להשלמת ה־MVP; בדיקות מכשירים ושימושיות והביקורת הסופית עדיין פתוחות.
+לפני שינוי ענף production או push עם שינוי קוד יש לבדוק איזה commit יפורסם אוטומטית. המפתח אישר את המסירה ב־6 באוקטובר 2026; מדדי המכשירים והשימושיות שלא נמסרו מפורטים בדוח לצד האישור.
 
 ## קבצים והגנות
 
