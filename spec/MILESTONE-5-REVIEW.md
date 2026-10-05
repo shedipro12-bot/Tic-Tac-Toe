@@ -24,7 +24,7 @@ Node ‏24.15.0, npm ‏11.12.1, Chrome ‏154.0.8037.95 במחשב Windows.
 - 13 בדיקות עדכון אמיתיות: הסכמה, לחיצה כפולה, תור אדם/מחשב, Settings, טאבים והסכמה מקבילה, כשל worker-owned בהורדת B, offline, timeout וניסיון חוזר, rollback, חלון מותקן, שגיאת משחק ו־bootstrap חסר.
 - שתי בדיקות HTTP/CSP: GET ו־ETag/304 ללא worker; משחק מלא, גופן, שמע אמיתי והודעות worker ללא violations.
 - התקנת Chrome בפועל ופתיחת standalone offline נבדקו בפרופיל מבודד והוסרו בסיום. גם עדכון בחלון מותקן נבדק.
-- **8 בדיקות נוספות ב־HTTPS של Cloudflare עברו:** 3 ב־production, ‏3 ב־preview, עדכון A→B באותו alias ובידוד המקורות. אלה ריצות נפרדות מ־85 הבדיקות המקומיות.
+- **15 בדיקות ב־HTTPS של Cloudflare עברו בריצות נפרדות:** 8 מקוריות — 3 ב־production, ‏3 ב־preview, עדכון A→B באותו alias ובידוד המקורות; ועוד 7 על המועמד שנבנה מחדש — 3 ב־production, ‏3 ב־preview ובידוד. אלה ריצות נפרדות מ־85 הבדיקות המקומיות.
 - בשני המקורות אומתו HTTP/CSP, שלמות המשאבים, ETag/304 ו־404 אמיתי; משחק בכל הקשיים, שמע מקומי ממשי, פתיחה חדשה offline עם HTTP cache מנוטרל והתאוששות ממעטפת עם קוד חסר אחרי חזרת הרשת.
 - בעדכון המאוחסן הותקן worker ממתין B; טאב אחר הפעיל אותו בזמן תור מחשב ו־Settings במסמך A. זהות המסמך, המתגים ותור יחיד נשמרו. לאחר תוצאה ובחירה מפורשת כל טאב התרענן פעם אחת ל־B ולברירות המחדל; B נפתחה offline מתגובות worker.
 - בדיקת רשת ואחסון בגרסאות המאוחסנות מצאה בקשות לנכסי המשחק מאותו מקור בלבד, ללא violations של CSP ו־localStorage/sessionStorage ריקים. סקירת המימוש מאשרת שאין מסלול שמירת נתוני שחקן ב־IndexedDB או cookies. שני מקורות באותו פרופיל Chrome החזיקו scopes, controllers ומטמונים נפרדים.
@@ -35,7 +35,11 @@ Node ‏24.15.0, npm ‏11.12.1, Chrome ‏154.0.8037.95 במחשב Windows.
 
 ## פרסום
 
-נוצר פרויקט Git-integrated בשם **shedipro12-tic-tac-toe**, דרך חיבור GitHub הקיים של הריפו. קוד המועמד בשני הענפים הוא commit ‏`1c083200b1be8264a88a57101b4772854917262f`; תיעוד וראיות נוספים מועלים בנפרד ומוחרגים מבנייה מחדש. main נשאר בנקודת M4; לא בוצע merge.
+נוצר פרויקט Git-integrated בשם **shedipro12-tic-tac-toe**, דרך חיבור GitHub הקיים של הריפו. המועמד הסופי בשני הענפים נבנה מ־commit ‏`e6ca366e281d833c0d424bc51f39aa4aa6b3e470`; קוד המשחק זהה ל־`1c08320`, שבו נבדק העדכון. העלאת תיעוד וראיות הפעילה בנייה מחדש; כללי ההחרגה תוקנו ונוספו בדיקות לפלט החדש. main נשאר בנקודת M4; לא בוצע merge.
+
+המועמד הסופי: production ב־https://shedipro12-tic-tac-toe.pages.dev/, כתובת קבועה https://cfc873f2.shedipro12-tic-tac-toe.pages.dev/, deployment ‏`cfc873f2-84d8-488d-aa26-0d87435bcc62`, build ‏`1c619dd8-91ac-4e34-9ec9-58febff546d7`. preview באותו alias להלן, כתובת קבועה https://b9ac0ab4.shedipro12-tic-tac-toe.pages.dev/, deployment ‏`b9ac0ab4-3eed-425a-b43c-245e0aa04759`, build ‏`d9abcf1e-8f48-410b-8177-2ed8f1106ca3`. שבע בדיקות smoke/isolation עברו על הפלט הזה.
+
+הפלטים המקוריים שנבדקו מ־`1c08320`, כולל מעבר A→B:
 
 - **האתר הראשי:** https://shedipro12-tic-tac-toe.pages.dev/ — ענף production הוא `codex/milestone-5`. הכתובת הקבועה שנבדקה: https://e2506ecc.shedipro12-tic-tac-toe.pages.dev/; deployment ‏`e2506ecc-fa18-4bb0-bd29-33761cbd87c7`; build ‏`b24090c6-111f-4c34-9f61-e9445c4a2681`.
 - **preview:** https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/ — ענף `codex/milestone-5-preview`. A: deployment ‏`9cdd498f-e6b3-46dc-b7f3-e94e8b7d3cf1`, כתובת https://9cdd498f.shedipro12-tic-tac-toe.pages.dev/, build ‏`3e50a7bb-1612-4bf6-ad0e-9276ddbd381d`. B: deployment ‏`de2bfb72-1790-4328-9463-82db21fb8a7a`, כתובת https://de2bfb72.shedipro12-tic-tac-toe.pages.dev/, build ‏`c2061300-a488-4d68-878f-7d260440cbf8`.
@@ -48,7 +52,7 @@ Node ‏24.15.0, npm ‏11.12.1, Chrome ‏154.0.8037.95 במחשב Windows.
 
 ראיות ב־`artifacts/milestone-5/`: הצעת עדכון ב־Setup ובתוצאה, שני טאבים, ניסיון חוזר, חלון מותקן, התאוששות משחק ו־bootstrap. `update-report.json` מכיל מזהי builds ותוצאות; `local-http-report.json` מכיל כותרות HTTP; `offline-resource-report.json` ו־`installation-report.json` מתעדים משאבים והתקנה. צילומי הנסיגה כוללים את כל המסכים והמצבים. ראיות M1–M4 נשמרו במקומן; הדוח האחרון נמצא גם ב־playwright-report.
 
-ראיות פרסום באותה תיקייה: `hosted-production-{http,game,bootstrap}.json` ו־`hosted-preview-{http,game,bootstrap}.json`, צילומי offline, ‏`hosted-update-report.json` ושני צילומי המעבר, ‏`hosted-origin-isolation.json`, ‏`hosting-deployment.json` וצילום האתר `published-game.jpg`. ‏`hosted-update-stage-a.json` הוא תיעוד ביניים של שמירת A; דוח העדכון הסופי מוכיח את המעבר. הדוחות מכילים מקור, זמן ומזהה בנייה שנמדדו בפועל.
+ראיות פרסום באותה תיקייה: `hosted-production-{http,game,bootstrap}.json` ו־`hosted-preview-{http,game,bootstrap}.json` מתעדים את הפלטים המקוריים. `hosted-final-production-{http,game,bootstrap}.json` ו־`hosted-final-preview-{http,game,bootstrap}.json` וצילומי offline מתעדים את המועמד הסופי. בנוסף: `hosted-update-report.json` ושני צילומי המעבר, ‏`hosted-origin-isolation.json` מהבדיקה הסופית, ‏`hosting-deployment.json` וצילום האתר `published-game.jpg`. ‏`hosted-update-stage-a.json` הוא תיעוד ביניים של שמירת A; דוח העדכון הסופי מוכיח את המעבר. הדוחות מכילים מקור, זמן ומזהה בנייה שנמדדו בפועל.
 
 לשחזור: `npm ci`, ‏`npm test`, ‏`npm run test:e2e`. הפקודה האחרונה בודקת טיפוסים, מכינה שתי בניות עם אימותי PWA/hosting ומריצה את הדפדפן. `npm run build` בונה מועמד יחיד; `npm run preview` מפעיל תצוגה מקומית. בדיקות התקנה דורשות desktop session ו־Chrome מותקן. פקודות בדיקת HTTPS ב־README משתמשות ב־`playwright.hosted.config.ts`; בדיקת עדכון חיה דורשת בנייה שנייה של preview בזמן הריצה.
 

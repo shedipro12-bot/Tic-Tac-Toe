@@ -8,7 +8,12 @@
 
 ## המועמדים שנבדקו — 5 באוקטובר 2026
 
-כל שלוש הבניות הבאות מכילות קוד מ־commit ‏`1c083200b1be8264a88a57101b4772854917262f`. UUID בנייה משתנה גם בבנייה חוזרת של אותו commit.
+המועמד הסופי נבנה מ־commit ‏`e6ca366e281d833c0d424bc51f39aa4aa6b3e470`, הכולל את אותו קוד משחק כמו `1c08320` יחד עם תיעוד וראיות:
+
+- production: https://shedipro12-tic-tac-toe.pages.dev/; כתובת קבועה https://cfc873f2.shedipro12-tic-tac-toe.pages.dev/; deployment ID ‏`cfc873f2-84d8-488d-aa26-0d87435bcc62`; buildId ‏`1c619dd8-91ac-4e34-9ec9-58febff546d7`.
+- preview באותו alias להלן: כתובת קבועה https://b9ac0ab4.shedipro12-tic-tac-toe.pages.dev/; deployment ID ‏`b9ac0ab4-3eed-425a-b43c-245e0aa04759`; buildId ‏`d9abcf1e-8f48-410b-8177-2ed8f1106ca3`.
+
+על הפלט הסופי עברו עוד 7 בדיקות HTTPS של משחק, offline, HTTP/CSP, התאוששות ובידוד. שלוש הבניות המקוריות להלן מכילות קוד מ־commit ‏`1c083200b1be8264a88a57101b4772854917262f`, והן ראיות נפרדות לשמונה הבדיקות המקוריות ולמעבר A→B. UUID בנייה משתנה גם בבנייה חוזרת של אותו commit.
 
 - production: https://shedipro12-tic-tac-toe.pages.dev/; כתובת קבועה https://e2506ecc.shedipro12-tic-tac-toe.pages.dev/; deployment ID ‏`e2506ecc-fa18-4bb0-bd29-33761cbd87c7`; buildId ‏`b24090c6-111f-4c34-9f61-e9445c4a2681`.
 - preview A: כתובת קבועה https://9cdd498f.shedipro12-tic-tac-toe.pages.dev/; deployment ID ‏`9cdd498f-e6b3-46dc-b7f3-e94e8b7d3cf1`; buildId ‏`3e50a7bb-1612-4bf6-ad0e-9276ddbd381d`.
@@ -24,7 +29,7 @@
 - משתנה סביבה `SKIP_DEPENDENCY_INSTALL=1` ב־preview וב־production: ההתקנה נעשית ב־npm ci מתוך הנעילה.
 - production deployments אוטומטיים עבור `codex/milestone-5`; preview deployments עבור ענפים אחרים לפי ברירת המחדל. ענף הבדיקה שנוצר הוא `codex/milestone-5-preview`.
 - Build system: Version 3; build cache: Disabled; build comments: Disabled.
-- Build watch paths: include `*`; exclude `spec/**`, ‏`artifacts/**`, ‏`README.md`. כך העלאת תיעוד וראיות בלבד משמרת את פלט המועמד שנבדק; שינוי קוד ממשיך להפעיל בנייה. ב־commit מעורב הכולל קוד תתבצע בנייה חדשה ותידרש בדיקה למזהה החדש.
+- Build watch paths: include `*`; exclude `spec/*`, ‏`artifacts/*`, ‏`README.md`. הגדרת `**` הקודמת לא מנעה בנייה בעקבות התיעוד ולכן תוקנה לתחביר המתועד. לפי [Build watch paths](https://developers.cloudflare.com/pages/configuration/build-watch-paths/), כוכבית יחידה כוללת גם תיקיות מקוננות. מטרת הכללים היא לשמר פלט שנבדק בעת העלאת תיעוד בלבד; יש לוודא buildId לאחר push. שינוי קוד ממשיך להפעיל בנייה, וב־commit מעורב תידרש בדיקה למזהה החדש.
 - חיבור GitHub הקיים כבר כלל גישה לריפו. לא ניתנה הרשאה חדשה דרך האוטומציה.
 - ללא Functions, Web Analytics, תוספי משחק, שירותי AI או משתני סביבה סודיים לאפליקציה.
 

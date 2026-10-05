@@ -4,10 +4,10 @@
 
 ## הקפאת המועמד
 
-- כתובת HTTPS קבועה של המועמד: https://e2506ecc.shedipro12-tic-tac-toe.pages.dev/
+- כתובת HTTPS קבועה של המועמד: https://cfc873f2.shedipro12-tic-tac-toe.pages.dev/
 - האתר הראשי: https://shedipro12-tic-tac-toe.pages.dev/ — בעת הבדיקה יש לוודא שהוא עדיין מגיש את buildId המועמד.
-- commit: `1c083200b1be8264a88a57101b4772854917262f`.
-- deployment ID: `e2506ecc-fa18-4bb0-bd29-33761cbd87c7`; buildId: `b24090c6-111f-4c34-9f61-e9445c4a2681`.
+- commit: `e6ca366e281d833c0d424bc51f39aa4aa6b3e470`.
+- deployment ID: `cfc873f2-84d8-488d-aa26-0d87435bcc62`; buildId: `1c619dd8-91ac-4e34-9ec9-58febff546d7`.
 - alias נפרד לבדיקת עדכון באותו origin: https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/ — אין לעבור ממנו לכתובת deployment בזמן תרחיש עדכון.
 - תאריך הקפאת המועמד המאומת: 5 באוקטובר 2026. תאריך ביצוע ידני / בודק: ______
 - מכשיר / OS / דפדפן וגרסה מלאה לכל סביבה: ______

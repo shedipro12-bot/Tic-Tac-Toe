@@ -123,9 +123,9 @@ available in `playwright-report/` after the browser suite.
 
 ### Verify the hosted candidate
 
-Eight additional HTTPS checks passed against Cloudflare: three production
-checks, three preview checks, one live update at the same preview alias and one
-origin-isolation check. To repeat the production checks in PowerShell:
+Fifteen HTTPS checks passed in separate Cloudflare runs: eight original checks
+(including a live update at the same preview alias), then seven smoke/isolation
+checks against the final rebuilt candidate. To repeat the production checks in PowerShell:
 
 ```powershell
 $env:MILESTONE5_HOSTED_BASE_URL = 'https://shedipro12-tic-tac-toe.pages.dev/'
