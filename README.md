@@ -45,9 +45,10 @@ feedback switches On. A failed attempt unlocks the game and allows retry.
 Returning to a visible online document checks for updates, at most once per
 30 seconds. A fully prepared update can also be accepted offline.
 
-Cloudflare Pages configuration and manual release checks are included; the
-account connection, hosted verification and physical-device/user trials remain
-pending. See `spec/MILESTONE-5-REVIEW.md` for the actual completion status.
+The candidate is published at [Play Tic-Tac-Toe](https://shedipro12-tic-tac-toe.pages.dev/).
+Cloudflare HTTPS, headers, offline play, recovery, a real preview update and
+preview/production isolation were verified. Physical-device and user trials
+remain pending. See `spec/MILESTONE-5-REVIEW.md` for the actual completion status.
 
 ## Run locally
 
@@ -106,9 +107,9 @@ profile reopened in a new process, all levels, results, totals, restart/replay,
 settings, Range media responses and real offline playback. Worker-owned download
 failure, registration failure/retry, partial caches, quota failure, blocked cache
 access, core-load recovery and unsupported workers are tested separately.
-The suite includes the 59 unit tests and 69 browser tests from Milestone 4,
-including 12 fixed desktop offline acceptance cases, plus production HTTP/CSP
-checks and actual two-build update tests. The latest counts and results are in
+The final local run passed 59 unit tests and 85 browser tests: 69 browser tests
+from Milestone 4, including 12 fixed desktop offline acceptance cases, plus
+16 new HTTP/CSP, two-build update and transient recovery tests. The latest results are in
 `spec/MILESTONE-5-REVIEW.md`.
 The latter uses headed desktop Chrome in an offscreen, isolated test profile,
 installs and launches via Chrome's PWA protocol, verifies actual standalone
@@ -119,6 +120,29 @@ keep cached responses from hiding deliberately missing resources.
 Browser screenshots and JSON evidence are saved in `artifacts/milestone-5/`;
 previous milestone screenshots remain in their original directories. A test report is
 available in `playwright-report/` after the browser suite.
+
+### Verify the hosted candidate
+
+Eight additional HTTPS checks passed against Cloudflare: three production
+checks, three preview checks, one live update at the same preview alias and one
+origin-isolation check. To repeat the production checks in PowerShell:
+
+```powershell
+$env:MILESTONE5_HOSTED_BASE_URL = 'https://shedipro12-tic-tac-toe.pages.dev/'
+$env:MILESTONE5_HOSTED_LABEL = 'hosted-production'
+npx playwright test --config playwright.hosted.config.ts release.spec.ts
+```
+
+For preview smoke checks, use
+`https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/` and label
+`hosted-preview`. To also test isolation, set `MILESTONE5_PRODUCTION_URL` to the
+production URL and select the `separate origins` test in `update.spec.ts`.
+For the live update test, set `MILESTONE5_WAIT_FOR_UPDATE=1`, run the
+`same HTTPS preview` test in `update.spec.ts`, wait for its A-cached output,
+then rebuild the preview branch through Pages. This requires a real second
+deployment at that alias; two deployment URLs cannot substitute for it.
+The hosting document records the exact deployments and build IDs used for
+the completed checks. These checks do not perform the manual phone/user trials.
 
 ## Implementation boundaries
 

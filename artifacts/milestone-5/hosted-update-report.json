@@ -1,0 +1,19 @@
+{
+  "origin": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/",
+  "builds": {
+    "a": "3e50a7bb-1612-4bf6-ad0e-9276ddbd381d",
+    "b": "c2061300-a488-4d68-878f-7d260440cbf8"
+  },
+  "testedAt": "2026-10-05T11:54:09.369Z",
+  "httpCacheDisabled": true,
+  "waitingWorkerInstalled": true,
+  "otherTabPreservedDocument": true,
+  "pendingTurnCompletedOnce": true,
+  "reloadsAfterConsent": [
+    1,
+    1
+  ],
+  "defaultsRestored": true,
+  "offlineBFromWorker": true,
+  "outcome": "You win"
+}

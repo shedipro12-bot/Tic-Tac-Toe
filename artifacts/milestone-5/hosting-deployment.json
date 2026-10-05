@@ -1,0 +1,62 @@
+{
+  "project": "shedipro12-tic-tac-toe",
+  "provider": "Cloudflare Pages",
+  "repository": "https://github.com/shedipro12-bot/Tic-Tac-Toe",
+  "sourceCommit": "1c083200b1be8264a88a57101b4772854917262f",
+  "verifiedOn": "2026-10-05",
+  "production": {
+    "branch": "codex/milestone-5",
+    "url": "https://shedipro12-tic-tac-toe.pages.dev/",
+    "deploymentUrl": "https://e2506ecc.shedipro12-tic-tac-toe.pages.dev/",
+    "deploymentId": "e2506ecc-fa18-4bb0-bd29-33761cbd87c7",
+    "buildId": "b24090c6-111f-4c34-9f61-e9445c4a2681"
+  },
+  "preview": {
+    "branch": "codex/milestone-5-preview",
+    "alias": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/",
+    "a": {
+      "deploymentUrl": "https://9cdd498f.shedipro12-tic-tac-toe.pages.dev/",
+      "deploymentId": "9cdd498f-e6b3-46dc-b7f3-e94e8b7d3cf1",
+      "buildId": "3e50a7bb-1612-4bf6-ad0e-9276ddbd381d"
+    },
+    "b": {
+      "deploymentUrl": "https://de2bfb72.shedipro12-tic-tac-toe.pages.dev/",
+      "deploymentId": "de2bfb72-1790-4328-9463-82db21fb8a7a",
+      "buildId": "c2061300-a488-4d68-878f-7d260440cbf8"
+    }
+  },
+  "configuration": {
+    "frameworkPreset": "None",
+    "root": "repository root",
+    "output": "dist",
+    "buildCommand": "node --version && npm --version && npm ci && npm test && npm run build",
+    "skipDependencyInstall": "1 in production and preview",
+    "buildSystem": 3,
+    "buildCache": "disabled",
+    "buildComments": "disabled",
+    "watchIncludes": ["*"],
+    "watchExcludes": ["spec/**", "artifacts/**", "README.md"],
+    "previewBranchControl": "all non-production branches",
+    "functions": false,
+    "webAnalytics": false
+  },
+  "runtime": {
+    "node": "24.15.0",
+    "npm": "11.12.1",
+    "verifiedIn": "local runs and preview B build log"
+  },
+  "checks": {
+    "unitPassed": 59,
+    "unitTotal": 59,
+    "localBrowserPassed": 85,
+    "localBrowserTotal": 85,
+    "hostedPassed": 8,
+    "hostedTotal": 8,
+    "hostedBatches": {"productionSmoke": 3, "previewSmoke": 3, "sameOriginLiveUpdate": 1, "originIsolation": 1},
+    "physicalDeviceOfflineTotal": 64,
+    "physicalDeviceOfflineNotPerformed": 64,
+    "usabilityParticipantsPlanned": 10,
+    "usabilityParticipantsTested": 0
+  },
+  "releaseStatus": "Published candidate for developer review; physical-device and usability checks pending; MVP not approved"
+}

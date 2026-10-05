@@ -1,0 +1,23 @@
+{
+  "testedAt": "2026-10-05T11:55:21.097Z",
+  "preview": {
+    "origin": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev",
+    "controller": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/sw.js",
+    "scopes": [
+      "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/"
+    ],
+    "caches": [
+      "tic-tac-toe-precache-v2-https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/"
+    ]
+  },
+  "production": {
+    "origin": "https://shedipro12-tic-tac-toe.pages.dev",
+    "controller": "https://shedipro12-tic-tac-toe.pages.dev/sw.js",
+    "scopes": [
+      "https://shedipro12-tic-tac-toe.pages.dev/"
+    ],
+    "caches": [
+      "tic-tac-toe-precache-v2-https://shedipro12-tic-tac-toe.pages.dev/"
+    ]
+  }
+}

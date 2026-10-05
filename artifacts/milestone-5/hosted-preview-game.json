@@ -1,0 +1,342 @@
+{
+  "origin": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/",
+  "buildId": "c2061300-a488-4d68-878f-7d260440cbf8",
+  "browser": "154.0.8037.95",
+  "testedAt": "2026-10-05T11:55:17.433Z",
+  "httpCacheDisabled": true,
+  "offlineResources": [
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/",
+      "fromServiceWorker": true
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/assets/index-LBExEvNG.css",
+      "fromServiceWorker": true
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/assets/index-BH_xZtl8.js",
+      "fromServiceWorker": true
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/assets/main-DZGGhWma.css",
+      "fromServiceWorker": true
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/textures/grass.svg",
+      "fromServiceWorker": true
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/assets/main-BF3s-HKx.js",
+      "fromServiceWorker": true
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/assets/workbox-window.prod.es5-Bd17z0YL.js",
+      "fromServiceWorker": true
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/assets/nunito-sans-latin-800-normal-MgCk9Q3Y.woff2",
+      "fromServiceWorker": true
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/assets/nunito-sans-latin-600-normal-BtVRvDNj.woff2",
+      "fromServiceWorker": true
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/assets/nunito-sans-latin-700-normal-CICRJDmU.woff2",
+      "fromServiceWorker": true
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/assets/nunito-sans-latin-400-normal-AkRraKH2.woff2",
+      "fromServiceWorker": true
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/sounds/move-v1.mp3",
+      "fromServiceWorker": true
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/sounds/win-v1.mp3",
+      "fromServiceWorker": true
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/sounds/loss-v1.mp3",
+      "fromServiceWorker": true
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/sounds/draw-v1.mp3",
+      "fromServiceWorker": true
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/textures/wood.svg",
+      "fromServiceWorker": true
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/textures/chalk.svg",
+      "fromServiceWorker": true
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/",
+      "fromServiceWorker": true
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/assets/index-LBExEvNG.css",
+      "fromServiceWorker": true
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/assets/index-BH_xZtl8.js",
+      "fromServiceWorker": true
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/assets/main-DZGGhWma.css",
+      "fromServiceWorker": true
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/textures/grass.svg",
+      "fromServiceWorker": true
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/assets/main-BF3s-HKx.js",
+      "fromServiceWorker": true
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/assets/nunito-sans-latin-800-normal-MgCk9Q3Y.woff2",
+      "fromServiceWorker": true
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/assets/nunito-sans-latin-600-normal-BtVRvDNj.woff2",
+      "fromServiceWorker": true
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/assets/nunito-sans-latin-700-normal-CICRJDmU.woff2",
+      "fromServiceWorker": true
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/assets/workbox-window.prod.es5-Bd17z0YL.js",
+      "fromServiceWorker": true
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/assets/nunito-sans-latin-400-normal-AkRraKH2.woff2",
+      "fromServiceWorker": true
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/textures/wood.svg",
+      "fromServiceWorker": true
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/textures/chalk.svg",
+      "fromServiceWorker": true
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/sounds/move-v1.mp3",
+      "fromServiceWorker": true
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/sounds/win-v1.mp3",
+      "fromServiceWorker": true
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/sounds/loss-v1.mp3",
+      "fromServiceWorker": true
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/sounds/draw-v1.mp3",
+      "fromServiceWorker": true
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/",
+      "fromServiceWorker": true
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/assets/index-LBExEvNG.css",
+      "fromServiceWorker": true
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/assets/index-BH_xZtl8.js",
+      "fromServiceWorker": true
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/assets/main-DZGGhWma.css",
+      "fromServiceWorker": true
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/textures/grass.svg",
+      "fromServiceWorker": true
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/assets/main-BF3s-HKx.js",
+      "fromServiceWorker": true
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/assets/workbox-window.prod.es5-Bd17z0YL.js",
+      "fromServiceWorker": true
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/assets/nunito-sans-latin-800-normal-MgCk9Q3Y.woff2",
+      "fromServiceWorker": true
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/assets/nunito-sans-latin-600-normal-BtVRvDNj.woff2",
+      "fromServiceWorker": true
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/assets/nunito-sans-latin-700-normal-CICRJDmU.woff2",
+      "fromServiceWorker": true
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/assets/nunito-sans-latin-400-normal-AkRraKH2.woff2",
+      "fromServiceWorker": true
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/sounds/move-v1.mp3",
+      "fromServiceWorker": true
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/sounds/win-v1.mp3",
+      "fromServiceWorker": true
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/sounds/loss-v1.mp3",
+      "fromServiceWorker": true
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/sounds/draw-v1.mp3",
+      "fromServiceWorker": true
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/textures/wood.svg",
+      "fromServiceWorker": true
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/textures/chalk.svg",
+      "fromServiceWorker": true
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/",
+      "fromServiceWorker": true
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/assets/index-LBExEvNG.css",
+      "fromServiceWorker": true
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/assets/index-BH_xZtl8.js",
+      "fromServiceWorker": true
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/assets/main-DZGGhWma.css",
+      "fromServiceWorker": true
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/textures/grass.svg",
+      "fromServiceWorker": true
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/assets/main-BF3s-HKx.js",
+      "fromServiceWorker": true
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/assets/nunito-sans-latin-800-normal-MgCk9Q3Y.woff2",
+      "fromServiceWorker": true
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/assets/nunito-sans-latin-600-normal-BtVRvDNj.woff2",
+      "fromServiceWorker": true
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/assets/nunito-sans-latin-700-normal-CICRJDmU.woff2",
+      "fromServiceWorker": true
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/assets/workbox-window.prod.es5-Bd17z0YL.js",
+      "fromServiceWorker": true
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/assets/nunito-sans-latin-400-normal-AkRraKH2.woff2",
+      "fromServiceWorker": true
+    }
+  ],
+  "levels": [
+    "easy",
+    "medium",
+    "hard"
+  ],
+  "actualAudio": true,
+  "cspViolations": [],
+  "playerStorage": [
+    0,
+    0
+  ],
+  "appRequests": [
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/",
+      "method": "GET"
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/assets/index-BH_xZtl8.js",
+      "method": "GET"
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/assets/index-LBExEvNG.css",
+      "method": "GET"
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/assets/main-BF3s-HKx.js",
+      "method": "GET"
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/assets/main-DZGGhWma.css",
+      "method": "GET"
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/textures/grass.svg",
+      "method": "GET"
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/assets/workbox-window.prod.es5-Bd17z0YL.js",
+      "method": "GET"
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/assets/nunito-sans-latin-800-normal-MgCk9Q3Y.woff2",
+      "method": "GET"
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/assets/nunito-sans-latin-600-normal-BtVRvDNj.woff2",
+      "method": "GET"
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/assets/nunito-sans-latin-700-normal-CICRJDmU.woff2",
+      "method": "GET"
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/assets/nunito-sans-latin-400-normal-AkRraKH2.woff2",
+      "method": "GET"
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/textures/wood.svg",
+      "method": "GET"
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/textures/chalk.svg",
+      "method": "GET"
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/sounds/move-v1.mp3",
+      "method": "GET"
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/sounds/win-v1.mp3",
+      "method": "GET"
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/sounds/loss-v1.mp3",
+      "method": "GET"
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/sounds/draw-v1.mp3",
+      "method": "GET"
+    },
+    {
+      "url": "https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/sounds/win-v1.mp3",
+      "method": "GET"
+    }
+  ]
+}

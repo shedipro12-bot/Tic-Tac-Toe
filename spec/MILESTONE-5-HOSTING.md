@@ -2,21 +2,33 @@
 
 ## מצב בפועל
 
-המפתח בחר בפרויקט Cloudflare Pages **חדש**. החשבון מחובר, חיבור GitHub זמין והריפו נבחר בטופס הבנייה. עדיין אין deployment או כתובת HTTPS מאומתים. לא נוצר token בקוד ולא נרשמו סודות בריפו.
+המפתח בחר בפרויקט Cloudflare Pages **חדש**. נוצר פרויקט **shedipro12-tic-tac-toe** באמצעות חיבור GitHub הקיים. production ו־preview נבנו ופורסמו; בדיקות HTTPS, כותרות, משחק, offline, התאוששות ועדכון באותו alias עברו. לא נוצר token בקוד ולא נרשמו סודות בריפו.
 
-הריפו: https://github.com/shedipro12-bot/Tic-Tac-Toe. ענף המימוש המקומי: `codex/milestone-5`. ענף production המוצע: `main`; יש לאמת את הבחירה לפני החיבור. השם המוצע לפרויקט: `tic-tac-toe`, בכפוף לזמינות בחשבון. פרויקט Pages המחובר ל־GitHub אינו ניתן להחלפה מאוחרת לפרויקט Direct Upload; יש לבחור Git integration כדי לממש את התוכנית.
+הריפו: https://github.com/shedipro12-bot/Tic-Tac-Toe. ענף production שנבחר הוא `codex/milestone-5`; ענף הבדיקה הוא `codex/milestone-5-preview`. כך המועמד נגיש לביקורת בלי למזג ל־main, שנשאר ב־M4. ההצעה המקורית בתוכנית להשתמש ב־main אינה ההגדרה בפועל. מעבר עתידי ל־main מחייב בחירת הענף בהגדרות Pages ובדיקת הפלט; הוא לא בוצע במסגרת המסירה.
+
+## המועמדים שנבדקו — 5 באוקטובר 2026
+
+כל שלוש הבניות הבאות מכילות קוד מ־commit ‏`1c083200b1be8264a88a57101b4772854917262f`. UUID בנייה משתנה גם בבנייה חוזרת של אותו commit.
+
+- production: https://shedipro12-tic-tac-toe.pages.dev/; כתובת קבועה https://e2506ecc.shedipro12-tic-tac-toe.pages.dev/; deployment ID ‏`e2506ecc-fa18-4bb0-bd29-33761cbd87c7`; buildId ‏`b24090c6-111f-4c34-9f61-e9445c4a2681`.
+- preview A: כתובת קבועה https://9cdd498f.shedipro12-tic-tac-toe.pages.dev/; deployment ID ‏`9cdd498f-e6b3-46dc-b7f3-e94e8b7d3cf1`; buildId ‏`3e50a7bb-1612-4bf6-ad0e-9276ddbd381d`.
+- preview B: כתובת קבועה https://de2bfb72.shedipro12-tic-tac-toe.pages.dev/; deployment ID ‏`de2bfb72-1790-4328-9463-82db21fb8a7a`; buildId ‏`c2061300-a488-4d68-878f-7d260440cbf8`.
+
+בדיקת A→B בוצעה כולה ב־https://codex-milestone-5-preview.shedipro12-tic-tac-toe.pages.dev/ באמצעות Retry deployment של ענף preview. לא עברנו בין כתובות hash ולא מחקנו cache/registration כדי לדמות עדכון. בדיקות smoke נפרדות בוצעו ב־production וב־preview B; בדיקת בידוד בדקה את שני המקורות באותו פרופיל. התוצאות ב־[מסמך המסירה](MILESTONE-5-REVIEW.md) וב־`artifacts/milestone-5/hosted-*.json`.
 
 ## הגדרות הבנייה
 
 - Framework preset: None; root: שורש הריפו; output: `dist`.
-- Build command: `npm ci && npm test && npm run build`.
-- Node: ‏24.15.0 דרך `.node-version`, זהה לבדיקה המקומית.
+- Build command הנוכחי: `node --version && npm --version && npm ci && npm test && npm run build`. פלט production הנבדק נבנה באותן בדיקות באמצעות הפקודה ללא שתי הדפסות הגרסה; הדפסות נוספו לפני preview B.
+- Node: ‏24.15.0 דרך `.node-version`, זהה לבדיקה המקומית. יומן preview B מאשר בפועל Node ‏24.15.0 ו־npm ‏11.12.1 לאחר בחירת Node.
 - משתנה סביבה `SKIP_DEPENDENCY_INSTALL=1` ב־preview וב־production: ההתקנה נעשית ב־npm ci מתוך הנעילה.
-- production לפי הענף שנבחר; preview עבור `codex/milestone-5`. למועמד משתמשים בכתובת deployment קבועה; לבדיקת עדכון משתמשים באותו alias של ענף בשתי הבניות.
-- לבחור הרשאת GitHub לריפו זה בלבד אם נדרש חיבור חדש. הרשאה חדשה נבדקת מול המסך בפועל לפני אישורה.
+- production deployments אוטומטיים עבור `codex/milestone-5`; preview deployments עבור ענפים אחרים לפי ברירת המחדל. ענף הבדיקה שנוצר הוא `codex/milestone-5-preview`.
+- Build system: Version 3; build cache: Disabled; build comments: Disabled.
+- Build watch paths: include `*`; exclude `spec/**`, ‏`artifacts/**`, ‏`README.md`. כך העלאת תיעוד וראיות בלבד משמרת את פלט המועמד שנבדק; שינוי קוד ממשיך להפעיל בנייה. ב־commit מעורב הכולל קוד תתבצע בנייה חדשה ותידרש בדיקה למזהה החדש.
+- חיבור GitHub הקיים כבר כלל גישה לריפו. לא ניתנה הרשאה חדשה דרך האוטומציה.
 - ללא Functions, Web Analytics, תוספי משחק, שירותי AI או משתני סביבה סודיים לאפליקציה.
 
-חיבור ראשוני ל־main עשוי לפרסם אוטומטית את הקוד הנמצא שם. יש לבדוק איזה commit יפורסם לפני יצירת הפרויקט. המועמד המקומי אינו ב־main כרגע; פרסום preview אינו אישור למיזוג או להשלמת ה־MVP.
+לפני שינוי ענף production או push עם שינוי קוד יש לבדוק איזה commit יפורסם אוטומטית. פרסום המועמד אינו אישור למיזוג או להשלמת ה־MVP; בדיקות מכשירים ושימושיות והביקורת הסופית עדיין פתוחות.
 
 ## קבצים והגנות
 
@@ -26,7 +38,7 @@
 
 `npm run build` מאמת את ההעתקה, CSP, שמות הנכסים, המלאי וה־404. `npm run preview` הוא שרת אימות מקומי בלבד, המחיל את הכללים בפועל כדי לבדוק CSP בדפדפן. הוא אינו שרת production ואינו מוכיח התנהגות של Cloudflare.
 
-## אימות לאחר פרסום preview
+## נוהל אימות בפרסום הבא
 
 יש לרשום: שם פרויקט, כתובת deployment, alias ענף, commit, מזהה deployment, buildId מ־`/precache-inventory.json`, גרסת Node/npm בפלט הבנייה ותאריך. UUID בנייה משתנה גם עבור אותו commit.
 
@@ -38,7 +50,7 @@
 6. לנתק רשת אחרי הכנת B, לבחור עדכון ולפתוח מסמך חדש offline. מקור התגובות חייב להיות ה־worker, עם HTTP cache מנוטרל היכן שניתן.
 7. לבדוק ש־preview ו־production הם origins שונים עם registrations ו־caches נפרדים. בדיקת המכשירים והשימושיות מתבצעת על המועמד המדויק לפי הצ׳קליסט.
 
-לאחר אישור הפרסום, יש לוודא שה־commit הרצוי בענף production, לפרסם ולאמת מחדש HTTPS, headers, משחק ו־offline ב־origin של production. אין להעתיק תוצאת preview כאילו נמדדה ב־production.
+בכל פרסום חדש יש לוודא שה־commit הרצוי בענף production, ולבדוק מחדש HTTPS, headers, משחק ו־offline ב־origin של production. אין להעתיק תוצאת preview כאילו נמדדה ב־production. במסירה זו בוצעו בדיקות נפרדות בשני המקורות.
 
 ## rollback
 
