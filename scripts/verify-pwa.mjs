@@ -30,6 +30,10 @@ for (const icon of [...manifest.icons, { src: '/icons/apple-touch-180.png', size
   assert.equal(`${bytes.readUInt32BE(16)}x${bytes.readUInt32BE(20)}`, icon.sizes);
 }
 const html = await readFile('dist/index.html', 'utf8');
+const metadata = JSON.parse(await readFile('dist/boot-meta.json', 'utf8'));
+assert.equal(metadata.buildId, inventory.buildId, 'Bootstrap metadata must identify this build');
+assert(Array.isArray(metadata.core) && metadata.core.length > 1);
+for (const file of metadata.core) assert(cached.has(file.replace(/^\//, '')), `Bootstrap core missing from inventory: ${file}`);
 assert(html.includes('manifest.webmanifest')); assert(html.includes('apple-touch-180.png'));
 assert(!/<script(?![^>]*src=)[^>]*>\s*[^<]/.test(html), 'Inline script is not allowed');
 const worker = await readFile('dist/sw.js', 'utf8');

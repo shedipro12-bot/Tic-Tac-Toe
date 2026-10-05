@@ -197,6 +197,19 @@ test('missing core shows Connection needed and recovers when connection returns'
   await expect(page.getByRole('button', { name: 'Start Game' })).toBeVisible({ timeout: 20_000 });
   await expect(ready(page)).toBeVisible(); await screenshot(page, 'connection-recovered');
 });
+test('failed bootstrap retries a transient online core failure with a bounded delay', async ({ page, context }) => {
+  await context.route('**/sw.js', route => route.abort('failed'));
+  let attempts = 0; let available = false;
+  await context.route('**/assets/main-*.js', route => {
+    attempts++;
+    return available ? route.continue() : route.abort('failed');
+  });
+  await page.goto('/'); await expect(page.getByRole('heading', { name: 'Connection needed' })).toBeVisible();
+  await expect.poll(() => attempts).toBeGreaterThanOrEqual(2);
+  available = true;
+  await expect(page.getByRole('button', { name: 'Start Game' })).toBeVisible({ timeout: 10_000 });
+  expect(attempts).toBeLessThanOrEqual(6); await screenshot(page, 'bootstrap-transient-recovered');
+});
 test('partial optional assets and quota failure do not block a live game or claim readiness; repair preserves foreign caches', async ({ page, context }) => {
   await prepare(page); await start(page);
   await page.evaluate(async () => { const cache = await caches.open('other-application'); await cache.put('/sentinel', new Response('preserve')); });

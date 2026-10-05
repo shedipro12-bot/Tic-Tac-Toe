@@ -9,6 +9,10 @@ const button = document.getElementById('bootstrap-update-button') as HTMLButtonE
 const message = document.getElementById('bootstrap-update-message')!;
 let candidate: { worker: ServiceWorker; buildId: string } | undefined;
 let applying = false;
+let queued = false;
+let retryTimer: number | undefined;
+let retryCount = 0;
+const visible = () => document.visibilityState !== 'hidden';
 async function load() {
   try { await import('./main'); }
   catch {
@@ -18,7 +22,8 @@ async function load() {
   }
 }
 async function recover() {
-  if (!failed || recovering || applying || document.visibilityState === 'hidden') return;
+  if (!failed || applying || !visible()) return;
+  if (recovering) { queued = true; return; }
   recovering = true;
   try {
     // Read the existing registration; the fallback never registers a second worker.
@@ -46,7 +51,16 @@ async function recover() {
     // Only a failed bootstrap can reach this path; no match has started.
     window.location.reload();
   } catch { /* Retain the readable connection message. */ }
-  finally { recovering = false; }
+  finally {
+    recovering = false;
+    if (queued) { queued = false; void recover(); }
+    else if (failed && !candidate && navigator.onLine && visible() && retryTimer === undefined && retryCount < 3) {
+      // An online event can precede actual transport availability, especially
+      // for worker requests. Retry only this failed shell, with a fixed budget.
+      const delay = 1000 * 2 ** retryCount++;
+      retryTimer = window.setTimeout(() => { retryTimer = undefined; void recover(); }, delay);
+    }
+  }
 }
 button.addEventListener('click', async () => {
   if (!candidate || applying) return;
@@ -63,7 +77,11 @@ button.addEventListener('click', async () => {
   } catch { message.textContent = 'Update could not be completed. Try again.'; }
   finally { applying = false; button.disabled = false; }
 });
-window.addEventListener('online', () => { void recover(); });
-document.addEventListener('visibilitychange', () => { void recover(); });
+function resume() {
+  clearTimeout(retryTimer); retryTimer = undefined; retryCount = 0; void recover();
+}
+window.addEventListener('online', resume);
+window.addEventListener('offline', () => { clearTimeout(retryTimer); retryTimer = undefined; });
+document.addEventListener('visibilitychange', resume);
 if ('serviceWorker' in navigator) navigator.serviceWorker.addEventListener('controllerchange', () => { void recover(); });
 void load();

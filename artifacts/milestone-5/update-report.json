@@ -1,8 +1,8 @@
 {
   "browser": "154.0.8037.95",
   "builds": {
-    "a": "6a2b86d7-34b7-493e-b40f-8ee84f4d53ec",
-    "b": "1ed493e0-17d8-451b-a2db-148440761168"
+    "a": "99cabde6-1971-482b-afa5-cb7b4dd99999",
+    "b": "9543c1dd-9177-4b3f-8704-37d902a78ba7"
   },
   "sameOriginPerCase": true,
   "httpCacheDisabled": true,
@@ -10,67 +10,67 @@
     {
       "title": "waiting update preserves setup until one explicit reset, including a double click",
       "status": "passed",
-      "durationMs": 4342
+      "durationMs": 4371
     },
     {
       "title": "update waits through human turn and Settings, then resets a finished session",
       "status": "passed",
-      "durationMs": 2842
+      "durationMs": 2903
     },
     {
       "title": "update waits through computer turn and Settings, then resets a finished session",
       "status": "passed",
-      "durationMs": 2849
+      "durationMs": 2919
     },
     {
       "title": "another tab activates B while A completes its pending turn; simulated-hidden=false",
       "status": "passed",
-      "durationMs": 3269
+      "durationMs": 3385
     },
     {
       "title": "another tab activates B while A completes its pending turn; simulated-hidden=true",
       "status": "passed",
-      "durationMs": 3348
+      "durationMs": 3431
     },
     {
       "title": "parallel consent in two tabs reloads each exactly once",
       "status": "passed",
-      "durationMs": 2859
+      "durationMs": 2982
     },
     {
       "title": "a genuinely failed worker download keeps A usable and available offline",
       "status": "passed",
-      "durationMs": 796
+      "durationMs": 964
     },
     {
       "title": "a fully cached B updates without a network and preserves unrelated caches",
       "status": "passed",
-      "durationMs": 3496
+      "durationMs": 3656
     },
     {
       "title": "unresponsive waiting worker times out without resetting the game and can be retried",
       "status": "passed",
-      "durationMs": 2684
+      "durationMs": 2692
     },
     {
       "title": "rollback is another waiting update and still requires consent",
       "status": "passed",
-      "durationMs": 4139
+      "durationMs": 4190
     },
     {
       "title": "an actually installed app preserves A during activation from a browser tab",
       "status": "passed",
-      "durationMs": 5197
+      "durationMs": 5152
     },
     {
       "title": "a recoverable game error offers update and resets prior totals only after consent",
       "status": "passed",
-      "durationMs": 2959
+      "durationMs": 3132
     },
     {
       "title": "failed bootstrap waits for explicit consent to a fully cached different build, even offline",
       "status": "passed",
-      "durationMs": 2166
+      "durationMs": 2217
     }
   ],
   "limitations": [
